@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片放大镜效果</title>
+  <script src="../js/jquery-3.3.1.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .before {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      /* border: 1px solid #cccccc; */
+      cursor: move;
+    }
+    
+    .before img {
+      width: 100%;
+    }
+    
+    .mouse {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      opacity: .3;
+      display: none;
+    }
+    
+    .after {
+      position: absolute;
+      top: 0;
+      left: 420px;
+      width: 240px;
+      height: 240px;
+      /* border: 1px solid red; */
+      display: none;
+      overflow: hidden;
+      /* background: url(../images/2.jpg) no-repeat; */
+    }
+    
+    .after img {
+      position: absolute;
+      /* width: 100%; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="before">
+    <img src="../images/2.jpg" alt="">
+    <span class="mouse"></span>
+  </div>
+  <div class="after">
+    <img src="../images/2.jpg" alt="">
+  </div>
+</body>
+<script>
+  $('.before').on('mouseover', function() {
+    $('.mouse').show();
+    $('.after').show();
+    //获取mouse能够移动的最大宽度和最大高度
+    var maxMoveWidth = $('.before').width() - $('.mouse').width();
+    var maxMoveHeight = $('.before').height() - $('.mouse').height();
+    //console.log(maxMoveWidth, maxMoveHeight)
+    /* 鼠标移动，.mouse盒子跟着移动 */
+    $('.before').on('mousemove', function(e) {
+      //获取鼠标移动的x,y坐标
+      var x = e.clientX;
+      var y = e.clientY;
+      //console.log(x, y)
+      //获取mouse偏移位置
+      var mousex = x - $('.before').offset().left - $('.mouse').width() / 2;
+      var mousey = y - $('.before').offset().top - $('.mouse').height() / 2;
+      // console.log('11111' + $('.mouse').offset().left);
+      //控制mouse不能超出before
+      if (mousex < 0) {
+        mousex = 0;
+      }
+      if (mousey < 0) {
+        mousey = 0;
+      }
+      if (mousex > maxMoveWidth) {
+        mousex = maxMoveWidth;
+      }
+      if (mousey > maxMoveHeight) {
+        mousey = maxMoveHeight;
+      }
+      $('.mouse').css({
+        left: mousex,
+        top: mousey
+      });
+      var percentX = $('.mouse').position().left;
+      var percentY = $('.mouse').position().top;
+      // console.log('22222' + percentX)
+      //mouse距before的距离 / before的总宽 = imgx移动的距离 / img的尺寸
+      var imgX = percentX / $('.before').width() * $('.after').find('img').width();
+      var imgY = percentY / $('.before').height() * $('.after').find('img').height();
+
+      //after的图片放大设置
+      $('.after').find('img').css({
+        left: -imgX,
+        top: -imgY
+      });
+
+    })
+
+  })
+  $('.before').on('mouseout', function() {
+    $('.mouse').hide();
+    $('.after').hide();
+  })
+</script>
+
+</html>

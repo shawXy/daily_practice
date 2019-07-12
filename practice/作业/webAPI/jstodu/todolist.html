@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>todolist-prime</title>
+  <link rel="stylesheet" href="yuansheng.css">
+</head>
+
+<body>
+  <header>
+    <section>
+      <label for="add_list">My todolist</label>
+      <input type="text" id="add_list" name="add_list" placeholder="type here" required>
+    </section>
+  </header>
+  <div class="content">
+    <h1>未完成<span id="todocount"></span></h1>
+    <ol id="todolist">
+    </ol>
+    <h1>已完成<span id="donecount"></span></h1>
+    <ol id="donelist">
+    </ol>
+  </div>
+</body>
+<script>
+  // 通过id获取到input
+  var ipt = document.querySelector('#add_list');
+  // 获取到未完成列表
+  var todolist = document.querySelector('#todolist');
+  // 获取到已完成列表
+  var donelist = document.getElementById('donelist');
+  // 存储所有数据
+  var arr = [];
+  // 添加键盘按下事件
+  ipt.onkeydown = function (event) {
+    if (event.keyCode == 13) {
+      // 获取输入框的value
+      var val = ipt.value;
+      ipt.value = '';
+      // 声明一个对象存储数据
+      var obj = {
+        name: val,
+        type: false,
+      }
+      // 找到返回对应的索引
+      var index = arr.findIndex(function (item, index) {
+        return item.name == obj.name
+      })
+      // 未找到添加到数组
+      if (index == -1) {
+        arr.push(obj);
+        // 创建一个未完成的li
+        createTodulist(obj);
+        // 添加完成后给每一个a添加事件
+        addAClick();
+        // 添加完成后给每一个input复选框添加事件
+        addIptClick();
+      } else {
+        // 找到给提示
+        alert('该事情已经添加');
+      }
+
+    }
+  }
+  // 创建todulist
+  function createTodulist(obj) {
+    // 创建一个li标签
+    var li = document.createElement('li');
+    // 将li添加到ol
+    todolist.appendChild(li);
+    // 创建一个input标签
+    var ipt = document.createElement('input');
+    // ipt 绑定属性
+    ipt.type = 'checkbox';
+    li.appendChild(ipt);
+    // 创建一个p标签
+    var p = document.createElement('p');
+    // 将内容插入到p
+    p.innerText = obj.name;
+    li.appendChild(p);
+    // 创建一个a标签
+    var a = document.createElement('a');
+    a.href = 'javascript:;';
+    a.innerText = '-';
+    li.appendChild(a);
+  }
+  // 给每一个a标签增加点击事件
+  function addAClick() {
+    // 获取所有的a标签添加点击事件
+    var a = document.querySelectorAll('#todolist a');
+    aHandle(a, todolist);
+  }
+  // 给每一个复选框增加点击事件
+  function addIptClick() {
+    // 获取所有的a标签添加点击事件
+    var ipt = document.querySelectorAll('#todolist input[type="checkbox"]');
+    for (var i = 0; i < ipt.length; i++) {
+      ipt.index = i;
+      ipt[i].onclick = function () {
+        // 获取到name
+        var name = this.nextSibling.innerText;
+        console.log(arr);
+
+        // 查找到对应的数组并返回
+        var xiaoObj = arr.find(function (item, index) {
+          return item.name == name;
+        })
+        // 查找到对应的数组并返回
+        var startIndex = arr.findIndex(function (item, index) {
+          return item.name == name;
+        })
+        // 修改对象的type属性
+        xiaoObj.type = true;
+        // 替换掉当前的对象
+        arr.splice(startIndex, 1, xiaoObj);
+        // 将未完成的事情转化到已经完成
+        finish(arr);
+        // 先删除元素，
+        todolist.removeChild(this.parentNode);
+      }
+    }
+  }
+  // 未完成事件点击选中时执行
+  function finish(arr) {
+    var lis = '';
+    var donelist = document.getElementById('donelist');
+    for (var i = 0; i < arr.length; i++) {
+      var obj = arr[i];
+      if (obj.type) {
+        lis += "<li>" +
+          "<p>" + obj.name + "</p>" +
+          "<a>-</a>" +
+          "</li>";
+      }
+    }
+    donelist.innerHTML = lis;
+    // 获取所有完成事件里面的a标签添加点击事件
+    finishAclick();
+  }
+  // 完成事件的a标签的点击事件
+  function finishAclick() {
+    var a = document.querySelectorAll('#donelist li a');
+    aHandle(a, donelist)
+  }
+  // 重复事情拆分
+  function aHandle(a, textContent) {
+    for (var i = 0; i < a.length; i++) {
+      a.index = i;
+      a[i].onclick = function () {
+        // 获取到name
+        var name = this.previousSibling.innerText
+        // 查找到对应的数组并返回
+        var startIndex = arr.findIndex(function (item, index) {
+          return item.name == name;
+        })
+        arr.splice(startIndex, 1)
+        // 先删除元素，
+        textContent.removeChild(this.parentNode);
+      }
+    }
+  }
+</script>
+
+</html>

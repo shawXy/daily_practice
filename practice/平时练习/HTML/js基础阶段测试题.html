@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // ------在控制台输出 1到100之间 所有能被5整除的数的和
+  /* var sum = 0;
+    for (var i = 1; i <= 100; i++) {
+      if (i % 5 == 0) {
+        sum += i;
+      }
+    }
+    console.log('1到100之间 所有能被5整除的数的和为：' + sum); */
+
+
+
+  // -------------请将1到100之间所有能被3整除的数字添加到新数组arr中，并打印到控制台
+  /*  var arr = [];
+   for (var i = 1; i <= 100; i++) {
+     if (i % 3 == 0) {
+       arr[arr.length] = i;
+     }
+   }
+   console.log(arr); */
+
+
+  // -----------打印九九乘法表
+
+  /*  for (var i = 1; i <= 9; i++) {
+     for (var j = 1; j <= i; j++) {
+       document.write(j + 'X' + i + '=' + i * j + ' ');
+     }
+     document.write('<br>');
+   } */
+
+
+  // ------------已知数组 arr = [1,9,3,7,5] ,使用程序计算出该数组的最大值，封装成函数
+
+  /*  var arr = [1, 9, 3, 7, 5];
+
+   function getMax(arr) {
+     var max = arr[0];
+     for (var i = 0; i < arr.length; i++) {
+       if (max < arr[i]) {
+         max = arr[i];
+       }
+     }
+     return max;
+   }
+   var max_data = getMax(arr);
+   document.write('该数组的最大值为：' + max_data); */
+
+
+  // ----------封装一个对数组元素进行冒泡排序的函数（从大到小）
+  //   var arr = [1, 5, 2, 3, 7, 8, 4];
+
+  /*  function bubble(arr) {
+     for (var i = 1; i < arr.length; i++) {
+       for (var j = 0; j < arr.length - i; j++) {
+         if (arr[j] < arr[j + 1]) {
+           var temp = arr[j];
+           arr[j] = arr[j + 1];
+           arr[j + 1] = temp;
+         }
+       }
+     }
+     return arr;
+   } */
+  //   document.write(bubble(arr));
+
+
+
+  // --------编写一个函数，将如下字符串'get-element-by-id'修改为驼峰表示法'getElementById'
+  //方法一：
+  /* var str = 'get-element-by-id';
+
+  function changeStr(str) {
+    var arr = str.split('-');
+    for (var i = 1; i < arr.length; i++) {
+      arr[i] = arr[i].split('');
+
+      arr[i][0] = arr[i][0].toLocaleUpperCase();
+      arr[i] = arr[i].join('');
+    }
+    str = arr.join('');
+    return str;
+  }
+  var re = changeStr(str);
+  console.log(re); */
+
+  //方法二
+  var str = 'get-element-by-id';
+
+  function changeStr(str) {
+    var arr = str.split('-');
+    var str2 = '';
+    for (var i = 1; i < arr.length; i++) {
+      var word = arr[i];
+      str2 += word.charAt(0).toLocaleUpperCase() + word.slice(1);
+    }
+    str2 = arr[0] + str2;
+
+    return str2;
+  }
+  var re = changeStr(str);
+  console.log(re);
+</script>
+
+</html>

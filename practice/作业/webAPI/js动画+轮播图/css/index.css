@@ -1,0 +1,65 @@
+.viewport {
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+
+/* banenr模块 */
+
+.banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* 轮播项模块 */
+
+.banner .content {
+  width: 600%;
+  position: relative;
+  left: 0;
+}
+
+.banner .content .item {
+  width: 16.666%;
+  float: left;
+}
+
+.banner .content a {
+  display: block;
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+}
+
+
+/* 一组小点 */
+
+.banner ul {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.banner li {
+  width: 4px;
+  height: 4px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-left: 10px;
+  float: left;
+}
+
+.banner li:first-child {
+  margin-left: 0;
+}
+
+.banner li.active {
+  background: blue;
+}

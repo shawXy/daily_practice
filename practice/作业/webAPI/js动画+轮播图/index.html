@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>轮播图</title>
+</head>
+
+<body>
+  <!-- 动画 -->
+  <div class="animation">
+    <div class="button">
+      <input type="button" value="向右运动" class="turnright">
+      <input type="button" value="向左运动" class="turnleft">
+    </div>
+    <div class="inner"></div>
+  </div>
+  <!-- 轮播图 -->
+  <div class="banner">
+    <ul class="img_ul">
+      <li>
+        <a href="javascript:"><img src="./images/banner1.png" alt=""></a>
+      </li>
+      <li>
+        <a href="javascript:"><img src="./images/banner2.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="javascript:"><img src="./images/banner3.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="javascript:"><img src="./images/banner4.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="javascript:"><img src="./images/banner1.png" alt=""></a>
+      </li>
+    </ul>
+    <div class="btn leftBtn">&lt;</div>
+    <div class="btn rightBtn">&gt;</div>
+    <ul class="pointer">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+<script src="./js/elmove.js"></script>
+<script src="./js/ainimation.js"></script>
+<script src="./js/slider.js"></script>
+
+</html>

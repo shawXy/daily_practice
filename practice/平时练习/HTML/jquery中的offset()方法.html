@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    .p {
+      position: relative;
+      margin: 10px;
+      margin-top: 1000px;
+      width: 400px;
+      height: 400px;
+      background-color: #000;
+    }
+    
+    .s {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      left: 100px;
+      top: 100px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="p">
+    <div class="s"></div>
+  </div>
+</body>
+<script>
+  $('.s').click(function(e) {
+      // alert(111)
+      var x = e.clientX; //鼠标参照浏览器的x坐标
+      var w = $('.s').offset().top; //基于文档偏移量
+      var h = $('.s').position().top; //基于父元素的偏移量
+      console.log(x);
+      console.log(w);
+      console.log(h);
+    })
+    // alert(22)
+</script>
+
+</html>

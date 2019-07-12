@@ -1,0 +1,186 @@
+@media screen and (min-width:640px){
+    html {
+        font-size: 64px!important;
+    }
+}
+@base:64;
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 320px;
+    width: 640rem/@base;
+    margin: 0 auto;
+    background-color: #ccc;
+    font-size: 14rem/@base;
+}
+a {
+    text-decoration: none;
+    color: #333;
+    &:hover {
+        text-decoration: none;
+        color: #333; 
+    }
+}
+li {
+    list-style: none;
+}
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+//----------------------------------------具体样式
+.top {
+    width: 640rem/@base;
+    min-width: 320px;
+    height: 44rem/@base;
+    line-height: 44rem/@base;
+    background-color: #222;
+    color: #ffffff;
+    font-size: 14rem/@base;
+    ul {
+        display: flex;
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.close {
+                flex: 8%;
+                img {
+                    width: 10rem/@base;
+                }
+            }
+            &.logo {
+                flex: 10%;
+                img {
+                    width: 30rem/@base;
+                }
+            }
+            &.text {
+                flex: 57%;
+            }
+            &.open {
+                flex: 25%;
+                background-color: red;
+            }
+
+        }
+    }
+}
+.search {
+    position: fixed;
+    width: 640rem/@base;
+    min-width: 320px;
+    font-size: 14rem/@base;
+    color: #ffffff;
+    height: 44rem/@base;
+    line-height: 44rem/@base;
+    display: flex;
+    .menu {
+        width: 44rem/@base;
+        text-align: center;
+        line-height: 50rem/@base;
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 20rem/@base;
+            height: 18rem/@base;
+            background: url(../images/s-btn.png) no-repeat;
+            background-size: 20rem/@base;
+        }
+    }
+    .center {
+        flex: 1;
+        background-color: #fff;
+        margin: 7rem/@base 10rem/@base;
+        position: relative;
+        border-radius: 44rem/@base;
+        .icon1 {
+            position: absolute;
+            width: 20rem/@base;
+            height: 15rem/@base;
+            background: url(../images/jd.png);
+            background-size: 20rem/@base;
+            position: absolute;
+            top: 7rem/@base;
+            left: 8rem/@base;
+            &:after {
+                content: "";
+                position: absolute;
+                height: 15rem/@base;
+                border-right: 1rem/@base solid #ccc;
+                top: 0rem/@base;
+                right: -12rem/@base;
+            }
+        }
+        .icon2 {
+            width: 18rem/@base;
+    height: 15rem/@base;
+    background: url(../images/jd-sprites.png) no-repeat -82rem/@base 0;
+    background-size: 199rem/@base;
+    position: absolute;
+    top: 7rem/@base;
+    left: 50rem/@base;
+        }
+
+    }
+    .right {
+        width: 48rem/@base;
+        text-align: center;
+    }
+}
+.main {
+    width: 640rem/@base;
+    min-width: 320px;
+    .slid {
+        img {
+            width: 100%;
+        }
+    }
+    .brand {
+        ul {
+            display: flex;
+            li {
+                flex: 1;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+nav {
+    font-size: 14rem/@base;
+    padding: 10rem/@base 0;   
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            flex: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           padding-top: 10rem/@base;
+            img {
+                width: 40rem/@base;
+                padding-bottom: 6rem/@base;
+            }
+        }
+    }
+}
+.footer {
+    display: flex;
+    box-sizing: border-box;
+    .one {
+        flex:2;
+    }
+    .two{
+        flex: 1;
+        border-left: 1rem/@base solid #000;
+    }
+    .three {
+        flex: 1;
+        border-left: 1rem/@base solid #000;
+    }
+}

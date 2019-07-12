@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #222;
+}
+a:hover {
+  text-decoration: none;
+  color: #222;
+}
+p {
+  margin: 0;
+}
+.clearfix::before {
+  content: '';
+  display: block;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  clear: both;
+  line-height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+}
+.container .left {
+  margin-left: -15px;
+}
+.container .left .logo {
+  background-color: blue;
+}
+.container .left .logo img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.container .left .logo1 {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  background-color: blue;
+  line-height: 50px;
+}
+.container .left .nav {
+  background-color: #cccccc;
+}
+.container .left .nav ul li a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 30px;
+}
+.container .left .nav ul li a:hover {
+  background-color: #fff;
+}
+.container .left .nav ul li a span {
+  padding-right: 5px;
+}
+.container .center-top {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.container .center-top .ct-left {
+  padding: 0;
+}
+.container .center-top .ct-left a {
+  position: relative;
+  color: #ffffff;
+}
+.container .center-top .ct-left a img {
+  width: 100%;
+  height: 266px;
+}
+.container .center-top .ct-left a p {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 24px;
+  padding: 4px 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.container .center-top .ct-right {
+  padding: 0;
+}
+.container .center-top .ct-right a {
+  width: 50%;
+  float: left;
+  height: 128px;
+  border-left: 10px solid #fff;
+  position: relative;
+}
+.container .center-top .ct-right a img {
+  width: 100%;
+  height: 100%;
+}
+.container .center-top .ct-right a:nth-child(1),
+.container .center-top .ct-right a:nth-child(2) {
+  margin-bottom: 10px;
+}
+.container .center-top .ct-right a p {
+  position: absolute;
+  bottom: 0;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 4px 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.container .center-bottom .detail {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+.container .center-bottom .detail .text-muted + p {
+  padding: 10px 0;
+}
+.container .center-bottom .detail img {
+  width: 100%;
+}
+.right img {
+  width: 100%;
+}
+.welcome {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+.welcome .btn-primary {
+  border-radius: 0;
+}
+.welcome h4 {
+  padding: 8px;
+}
+@media screen and (max-width: 991px) {
+  .container .nav {
+    border-bottom: 1px solid #000;
+  }
+  .container .nav ul li {
+    float: left;
+    width: 20%;
+  }
+}

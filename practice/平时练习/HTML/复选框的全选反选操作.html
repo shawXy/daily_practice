@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>复选框全选反选</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .outer {
+      width: 500px;
+      margin: 0 auto;
+    }
+    
+    td {
+      padding: 0 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <table>
+      <thead>
+        <tr>
+          <td>
+            <input type="checkbox" name="all" id="all">
+          </td>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th>性别</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" name="student"></td>
+          <td>金刚葫芦娃八娃</td>
+          <td>14</td>
+          <td>男</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="student"></td>
+          <td>西湖醋鱼</td>
+          <td>20</td>
+          <td>男</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="student"></td>
+          <td>羊肉泡馍</td>
+          <td>22</td>
+          <td>男</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="student"></td>
+          <td>芭比小金刚</td>
+          <td>18</td>
+          <td>女</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</body>
+
+<script>
+  var all = document.querySelector('#all');
+  var students = document.querySelectorAll('input[name="student"]');
+
+  all.onclick = function() {
+    //alert(111);
+    var isChecked = all.checked;
+    for (var i = 0; i < students.length; i++) {
+      students[i].checked = isChecked;
+    }
+  }
+  for (var i = 0; i < students.length; i++) {
+
+    var students_num = students.length;
+    students[i].onclick = function() {
+      var check_num = document.querySelectorAll('input[name="student"]:checked').length;
+      all.checked = (check_num == students_num);
+
+    }
+  }
+</script>
+
+</html>

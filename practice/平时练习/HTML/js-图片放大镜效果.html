@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片放大镜效果</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .outer {
+      width: 1200px;
+      margin: 100px auto;
+    }
+    
+    .before {
+      position: relative;
+      float: left;
+      width: 400px;
+      height: 250px;
+      border: 1px solid #cccccc;
+      cursor: move;
+    }
+    
+    .before img {
+      width: 100%;
+    }
+    
+    .mouse {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      opacity: .4;
+      display: none;
+    }
+    
+    .after {
+      position: relative;
+      float: left;
+      width: 600px;
+      height: 340px;
+      border: 1px solid #ccc;
+      display: none;
+      overflow: hidden;
+      /* background: url(../images/2.jpg) no-repeat; */
+    }
+    
+    .after img {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="before">
+      <img src="../images/2-middle.jpg" alt="">
+      <span class="mouse"></span>
+    </div>
+    <div class="after">
+      <img src="../images/2-large.jpg" alt="">
+    </div>
+
+  </div>
+</body>
+<script>
+  var before = document.querySelector('.before');
+  var after = document.querySelector('.after');
+  var mouse = document.querySelector('.mouse');
+  var img = document.querySelector('.after img');
+  before.onmouseover = function() {
+    mouse.style.display = 'block';
+    after.style.display = 'block';
+  }
+  before.onmouseout = function() {
+    mouse.style.display = 'none';
+    after.style.display = 'none';
+  }
+  before.onmousemove = function(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var max_x = before.offsetWidth - mouse.offsetWidth;
+    var max_y = before.offsetHeight - mouse.offsetHeight;
+    x = x - before.offsetLeft - mouse.offsetWidth / 2;
+    y = y - before.offsetTop - mouse.offsetHeight / 2;
+    if (x < 0) {
+      x = 0;
+    } else if (x > max_x) {
+      x = max_x;
+    }
+    if (y < 0) {
+      y = 0;
+    } else if (y > max_y) {
+      y = max_y;
+    }
+    mouse.style.left = x + 'px';
+    mouse.style.top = y + 'px';
+
+    //小盒子在大盒子上移动的距离/大盒子的宽度 = 图片走的距离/图片的宽度
+    var mouseX = mouse.offsetLeft - before.clientLeft;
+    var mouseY = mouse.offsetTop - before.clientTop;
+
+    var imgx = mouseX / before.offsetWidth * img.offsetWidth;
+    var imgy = mouseY / before.offsetHeight * img.offsetHeight;
+    //console.log(img.offsetWidth);
+    img.style.left = -imgx + 'px';
+    img.style.top = -imgy + 'px';
+
+
+  }
+</script>
+
+</html>

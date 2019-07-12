@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <div id="box">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $('#box li').mouseenter(function() {
+      $(this).stop().animate({
+        width: 800,
+      }, 500).siblings().stop().animate({
+        width: 100
+      }, 500);
+
+    });
+    $('#box').mouseleave(function() {
+      $('li').stop().animate({
+        width: 240
+      }, 500);
+    });
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+
+</html>

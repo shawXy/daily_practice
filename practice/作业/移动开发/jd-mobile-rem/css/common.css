@@ -1,0 +1,177 @@
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 64px!important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-width: 320px;
+  width: 10rem;
+  margin: 0 auto;
+  background-color: #ccc;
+  font-size: 0.21875rem;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  text-decoration: none;
+  color: #333;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+.top {
+  width: 10rem;
+  min-width: 320px;
+  height: 0.6875rem;
+  line-height: 0.6875rem;
+  background-color: #222;
+  color: #ffffff;
+  font-size: 0.21875rem;
+}
+.top ul {
+  display: flex;
+}
+.top ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top ul li.close {
+  flex: 8%;
+}
+.top ul li.close img {
+  width: 0.15625rem;
+}
+.top ul li.logo {
+  flex: 10%;
+}
+.top ul li.logo img {
+  width: 0.46875rem;
+}
+.top ul li.text {
+  flex: 57%;
+}
+.top ul li.open {
+  flex: 25%;
+  background-color: red;
+}
+.search {
+  position: fixed;
+  width: 10rem;
+  min-width: 320px;
+  font-size: 0.21875rem;
+  color: #ffffff;
+  height: 0.6875rem;
+  line-height: 0.6875rem;
+  display: flex;
+}
+.search .menu {
+  width: 0.6875rem;
+  text-align: center;
+  line-height: 0.78125rem;
+}
+.search .menu:before {
+  content: '';
+  display: inline-block;
+  width: 0.3125rem;
+  height: 0.28125rem;
+  background: url(../images/s-btn.png) no-repeat;
+  background-size: 0.3125rem;
+}
+.search .center {
+  flex: 1;
+  background-color: #fff;
+  margin: 0.109375rem 0.15625rem;
+  position: relative;
+  border-radius: 0.6875rem;
+}
+.search .center .icon1 {
+  width: 0.3125rem;
+  height: 0.234375rem;
+  background: url(../images/jd.png);
+  background-size: 0.3125rem;
+  position: absolute;
+  top: 0.109375rem;
+  left: 0.125rem;
+}
+.search .center .icon1:after {
+  content: "";
+  position: absolute;
+  height: 0.234375rem;
+  border-right: 0.015625rem solid #ccc;
+  top: 0rem;
+  right: -0.1875rem;
+}
+.search .center .icon2 {
+  width: 0.28125rem;
+  height: 0.234375rem;
+  background: url(../images/jd-sprites.png) no-repeat -1.28125rem 0;
+  background-size: 3.109375rem;
+  position: absolute;
+  top: 0.109375rem;
+  left: 0.78125rem;
+}
+.search .right {
+  width: 0.75rem;
+  text-align: center;
+}
+.main {
+  width: 10rem;
+  min-width: 320px;
+}
+.main .slid img {
+  width: 100%;
+}
+.main .brand ul {
+  display: flex;
+}
+.main .brand ul li {
+  flex: 1;
+}
+.main .brand ul li img {
+  width: 100%;
+}
+nav {
+  font-size: 0.21875rem;
+  padding: 0.15625rem 0;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav ul li {
+  flex: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.15625rem;
+}
+nav ul li img {
+  width: 0.625rem;
+  padding-bottom: 0.09375rem;
+}
+.footer {
+  display: flex;
+  box-sizing: border-box;
+}
+.footer .one {
+  flex: 2;
+}
+.footer .two {
+  flex: 1;
+  border-left: 0.015625rem solid #000;
+}
+.footer .three {
+  flex: 1;
+  border-left: 0.015625rem solid #000;
+}

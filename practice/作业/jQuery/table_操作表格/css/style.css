@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  color: rgb(126, 53, 42);
+  text-decoration: none;
+  display: block;
+}
+
+a:hover {
+  color: rgb(126, 53, 42);
+  text-decoration: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+
+/* ----------------------主体 */
+
+.head {
+  height: 32px;
+  line-height: 32px;
+  background-color: rgb(34, 34, 34);
+  color: #ffffff;
+  text-align: center;
+}
+
+.head a {
+  color: #fff;
+  float: left;
+  padding: 0 10px;
+}
+
+.head a:hover {
+  background-color: #fff;
+  color: #000;
+  line-height: 31px;
+  border-bottom: 1px solid;
+}
+
+.head a.active {
+  background-color: #fff;
+  color: #000;
+  border-bottom: 1px solid;
+  line-height: 31px;
+}
+
+.head .fr {
+  margin-right: 50px;
+}
+
+.head .fl {
+  width: 20%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.head .fr span {
+  display: inline-block;
+  /* padding-left: 10px; */
+  transform: rotate(90deg);
+  vertical-align: middle;
+}
+
+.main {
+  height: 600px;
+  padding: 50px 20px 0;
+}
+
+.main .m-left {
+  width: 74%;
+  height: 600px;
+  border: 1px solid #ccc;
+  background-color: rgb(252, 250, 247);
+}
+
+.main .m-right {
+  width: 25%;
+  height: 600px;
+  border: 1px solid #ccc;
+  background-color: rgb(252, 250, 247);
+}
+
+.m-left,
+.m-right {
+  padding: 10px;
+}
+
+.m-table table,
+.items table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.m-table tbody tr {
+  line-height: 40px;
+  border-bottom: 1px solid rgb(245, 235, 234);
+}
+
+.m-table table thead,
+.items table thead {
+  background-color: rgb(232, 221, 216);
+  height: 36px;
+  line-height: 36px;
+}
+
+.m-table table input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+.mt input[type="button"],
+.all_button input[type="button"],
+.all_button input[type="submit"] {
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid rgb(126, 53, 42);
+  padding: 0 10px;
+  margin: 10px 0;
+}
+
+.items table {
+  padding: 10px;
+}
+
+.mrt p {
+  font-size: 14px;
+  color: rgb(126, 53, 42);
+}
+
+.items tbody tr {
+  line-height: 32px;
+  border-bottom: 1px solid rgb(245, 235, 234);
+}
+
+.already {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.already:hover {
+  color: #ccc;
+}
+
+.items table input[type="checkbox"] {
+  margin-left: 10px;
+}

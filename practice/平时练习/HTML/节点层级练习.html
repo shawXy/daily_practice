@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>节点层级</title>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="one">
+      <ul>
+        <li>初始一</li>
+        <li>初始二</li>
+        <li>初始三</li>
+      </ul>
+    </div>
+    <div class="two"></div>
+  </div>
+
+
+</body>
+
+<script>
+  // 获取的是整个节点里的内容，包括元素和文本
+  var one = document.querySelector('.one');
+  var two = document.querySelector('.two');
+
+  //   two.parentNode.childNodes;
+  //console.log(two.parentNode.firstElementChild.nextElementSibling);
+  var newDiv = document.createElement('div');
+  one.parentNode.insertBefore(newDiv, one);
+  var repImg = document.createElement('img');
+  one.parentNode.replaceChild(repImg, two);
+  var clone = one.cloneNode(true);
+  one.parentNode.insertBefore(clone, repImg);
+  console.log(one.parentNode);
+</script>
+
+</html>

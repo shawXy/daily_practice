@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>立方体</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      perspective: 1000px;
+      background-color: #000;
+    }
+    
+    .outer {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 200px auto;
+      transition: all 8s;
+      transform-style: preserve-3d;
+      animation: rotate 4s linear infinite reverse;
+    }
+    
+    .outer>div {
+      position: absolute;
+      width: 298px;
+      height: 298px;
+      border: 1px solid #fff;
+      background-color: skyblue;
+      line-height: 300px;
+      text-align: center;
+      font-size: 36px;
+      color: #fff;
+      opacity: .4;
+    }
+    /* .outer:hover {
+      transform: rotate3d(1, 1, 1, 360deg);
+    } */
+    
+    .rec1 {
+      transform: translateZ(150px);
+    }
+    
+    .rec2 {
+      transform: translateX(-150px) rotateY(-90deg);
+    }
+    
+    .rec3 {
+      transform: translateZ(-150px) rotateY(180deg);
+    }
+    
+    .rec4 {
+      transform: translateX(150px) rotateY(90deg);
+    }
+    
+    .rec5 {
+      transform: translateY(-150px) rotateX(90deg);
+    }
+    
+    .rec6 {
+      transform: translateY(150px) rotateX(-90deg);
+    }
+    
+    @keyframes rotate {
+      0% {
+        transform: rotate3d(0, 0, 0, 0);
+      }
+      100% {
+        transform: rotate3d(0.5, 1, 0, 360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="rec1">1</div>
+    <div class="rec2">2</div>
+    <div class="rec3">3</div>
+    <div class="rec4">4</div>
+    <div class="rec5">5</div>
+    <div class="rec6">6</div>
+  </div>
+</body>
+
+</html>

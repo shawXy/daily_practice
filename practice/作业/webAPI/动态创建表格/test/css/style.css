@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.outer,
+.content {
+  width: 800px;
+  margin: 10px auto;
+}
+
+input[type='button'] {
+  width: 60px;
+  line-height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.content {
+  padding-top: 20px;
+}
+
+.content thead {
+  background-color: #8937df;
+}
+
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.content table tbody tr {
+  text-align: center;
+}
+
+.content table tbody tr:nth-child(even) {
+  background-color: red;
+}
+
+.content table tbody tr:nth-child(odd) {
+  background-color: yellow;
+}

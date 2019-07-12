@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    a {
+      display: block;
+    }
+    
+    .light {
+      width: 125px;
+      height: 220px;
+      margin: 0 auto;
+      background-image: url(../images/close.jpg);
+    }
+    
+    .s_index,
+    .shop {
+      width: 400px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .s_index li {
+      list-style: none;
+      border-bottom: 1px solid #ccc;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    
+    .shop input {
+      width: 90px;
+      height: 50px;
+      padding-left: 10px;
+    }
+    
+    .shop button {
+      position: absolute;
+      left: 78px;
+      width: 25px;
+      height: 25px;
+    }
+    
+    .shop button[value='-'] {
+      bottom: 1px;
+    }
+    
+    .outer {
+      width: 400px;
+      height: 40px;
+      margin: 0 auto;
+    }
+    
+    .outer button {
+      width: 100px;
+      height: 40px;
+    }
+  </style>
+</head>
+
+
+<body>
+  <!-- <div id="inner">
+    <h2>这是练习innerText和innerHTML的div</h2>
+    <p>innerText不能获取到里面的标签</p>
+  </div> -->
+
+
+  <!--  <a href="javascript:">
+    <img src="../images/1-small.jpg" alt="">
+  </a> -->
+
+  <!-- <button>开</button> -->
+
+  <!-- <a href="http://www.baidu.com">百度</a> -->
+
+
+  <!--   <div class="s_index">
+    <ul>
+      <li>这是第一个li</li>
+      <li>这是第二个li</li>
+      <li>这是第三个li</li>
+      <li>这是第四个li</li>
+      <li>这是第五个li</li>
+      <li>这是第六个li</li>
+      <li>这是第七个li</li>
+      <li>这是第八个li</li>
+    </ul>
+  </div> -->
+
+  <!--  <div class="shop">
+    <input type="text" value="1">
+    <button value="+">+</button>
+    <button value="-" disabled>-</button>
+  </div> -->
+
+
+  <!--  <div class="light">
+
+  </div> -->
+
+
+  <div class="outer">
+    <button value="reset">恢复</button>
+  </div>
+  <img src="../images/dong.jpg" alt="" width="400">
+
+</body>
+<script>
+  //  ------------------------------------------innerText和innerHTML区别
+  /*  var div1 = document.getElementById('inner');
+   console.log('1111' + div1.innerHTML);
+   console.log('2222' + div1.innerText);
+   console.log('3333' + div1.textContent);
+   //div1.innerHTML = '<ins>innerHTML新设置的内容</ins>';
+   // div1.innerText = '<ins>innerText新设置的内容</ins>';
+   div1.innerText = '<ins>textContent新设置的内容</ins>'; */
+
+
+  // -----------------------------------------来回切换两张图片
+  /*  var tabImg = document.querySelector('a img');
+   tabImg.onclick = function() {
+
+     // alert(111);
+     if (tabImg.src.indexOf('images/1-small.jpg') > -1) {
+       // alert(222)
+       tabImg.src = '../images/2-small.jpg';
+     } else {
+       tabImg.src = '../images/1-small.jpg';
+     }
+   } */
+
+  /*  var tabImg = document.querySelector('a img');
+   var imgsrc = tabImg.src;
+   tabImg.onclick = function() {
+
+     // alert(111);
+     if (tabImg.src == imgsrc) {
+       // alert(222)
+       tabImg.src = '../images/2-small.jpg';
+     } else {
+       tabImg.src = '../images/1-small.jpg';
+     }
+   } */
+
+  //----------------------------------------切换文字 开 关  效果
+  /*   var turnoff = document.querySelector('button');
+    turnoff.onclick = function() {
+      if (turnoff.innerText == '开') {
+        turnoff.innerText = '关';
+      } else {
+        turnoff.innerText = '开';
+      }
+    } */
+
+  //  ------------------------------------- 给一组带有链接地址的a标签注册事件，点击谁就显示谁的地址和名称，不跳转
+  /*  var link = document.querySelector('a');
+   link.onclick = function() {
+     document.write(link.href);
+     document.write('<br>');
+     document.write(link.innerText);
+     return false;
+   } */
+
+
+
+  //  ------------------------------------  给一组li注册点击事件，鼠标点击那个li就弹出这个li在这一组中的索引位置。
+  /* var lis = document.querySelectorAll('.s_index li');
+  for (var i = 0; i < lis.length; i++) {
+    lis[i].index = i;
+    lis[i].onclick = function() {
+      alert(this.index);
+    }
+  } */
+
+
+
+  // ------------------------------=--------购物车页面中的商品数量文本框
+  /*   var num = document.querySelector('.shop input');
+    var plus = document.querySelector('button[value="+"]');
+    var minus = document.querySelector('button[value="-"]');
+    plus.onclick = function() {
+      num.value = num.value - 0 + 1;
+      minus.disabled = false;
+    }
+    minus.onclick = function() {
+      num.value = num.value - 1;
+      if (num.value == 1) {
+        minus.disabled = true;
+      }
+    } */
+
+
+
+  //----------------------------------------开关灯
+  /* var turn_off = document.querySelector('.light');
+  turn_off.onmouseenter = function() {
+    this.style.backgroundImage = 'url(../images/open.jpg)';
+  }
+  turn_off.onmouseleave = function() {
+    this.style.backgroundImage = 'url(../images/close.jpg)';
+  } */
+
+
+  // -------------------------有一个图片，鼠标点一下变大，再点再变大，如此一直变大。另有一个按钮，点一下后图片可以立即恢复到初始大小。
+  var img = document.querySelector('img');
+  var reset = document.querySelector('.outer button[value="reset"]');
+  var init_width = img.width;
+  console.log(init_width)
+  reset.onclick = function() {
+    img.width = init_width;
+  }
+  img.onclick = function() {
+    img.width += 100;
+
+  }
+</script>
+
+</html>

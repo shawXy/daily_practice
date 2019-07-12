@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>鼠标事件</title>
+  <style>
+    /* //图片跟着鼠标移动
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+    } */
+    
+    body {
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .outer {
+      width: 300px;
+      height: 380px;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    
+    .top {
+      height: 50px;
+      background-color: #87ceed;
+      cursor: move;
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    //图片跟着鼠标移动
+    <img src="../images/01.jpg" alt=""> -->
+
+  <div class="outer">
+    <div class="top">
+
+    </div>
+    <div class="bottom">
+
+    </div>
+  </div>
+  <script>
+    // 鼠标按下可以移动【按下有移动事件，在document中移动】
+    // 鼠标抬起不可以移动【抬起没有移动事件】
+    // 鼠标在登录的div按下，才可以移动
+    // 移动的时候，是整个div在移动
+    var topDiv = document.querySelector('.top');
+    var outer = document.querySelector('.outer');
+
+    topDiv.onmousedown = function(e1) {
+      var xo = e1.offsetX;
+      var yo = e1.offsetY;
+      document.onmousemove = function(e) {
+        var x = e.clientX;
+        var y = e.clientY;
+        outer.style.left = x - xo + 'px';
+        outer.style.top = y - yo + 'px';
+      }
+
+    }
+    topDiv.onmouseup = function() {
+      document.onmousemove = null;
+    }
+  </script>
+</body>
+<!-- <script>
+  //图片跟着鼠标移动
+  var img = document.querySelector('img');
+  document.onmousemove = function(e) {
+    img.style.left = e.pageX + 'px';
+    img.style.top = e.pageY + 'px';
+
+  }
+</script> -->
+
+
+
+
+</html>

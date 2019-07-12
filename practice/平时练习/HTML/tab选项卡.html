@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选项卡</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    li {
+      list-style: none;
+    }
+    
+    .outer {
+      width: 400px;
+      margin: 0 auto;
+    }
+    
+    .clearfix::after {
+      content: '';
+      display: block;
+      height: 0;
+      visibility: hidden;
+      clear: both;
+    }
+    
+    .clearfix {
+      *zoom: 1;
+    }
+    
+    .tabs {
+      width: 100%;
+    }
+    
+    .tabs ul li {
+      float: left;
+      width: 100px;
+      text-align: center;
+      border-right: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    .contain {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-top: 0;
+    }
+    
+    .items {
+      /* background-color: pink; */
+      height: 300px;
+      display: none;
+    }
+    
+    .items:first-child {
+      display: block;
+    }
+    
+    .active {
+      background-color: #87ceed;
+      color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="outer">
+    <div class="tabs clearfix">
+      <ul>
+        <li class="active">一</li>
+        <li>二</li>
+        <li>三</li>
+        <li>四</li>
+      </ul>
+    </div>
+    <div class="contain">
+      <div class="items">
+        这是第1个选项卡的内容
+      </div>
+      <div class="items">
+        这是第2个选项卡的内容
+      </div>
+      <div class="items">
+        这是第3个选项卡的内容
+      </div>
+      <div class="items">
+        这是第4个选项卡的内容
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  var tabs = document.querySelectorAll('.tabs ul li');
+  var items = document.querySelectorAll('.contain .items');
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].index = i;
+    tabs[i].onclick = function() {
+      for (var j = 0; j < items.length; j++) {
+        items[j].style.display = 'none';
+        tabs[j].className = '';
+      }
+      this.className = 'active';
+      //   console.log(this.index);
+      items[this.index].style.display = 'block';
+
+    }
+
+  }
+</script>
+
+</html>

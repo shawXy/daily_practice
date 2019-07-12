@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color:#666;
+}
+.clearfix::after {
+	content: '';
+	height: 0;
+	visibility: hidden;
+	display: block;
+	clear: both;
+}
+.clearfix{
+	*zoom: 1;
+}
+ul {
+  list-style: none;
+}
+

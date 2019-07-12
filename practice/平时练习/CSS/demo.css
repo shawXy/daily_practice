@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  font-size: 100px;
+  font-weight: bold;
+  float: left;
+}
+
+.blue {
+  color: #006bff;
+}
+
+.red {
+  color: red;
+}
+
+.orange {
+  color: orange;
+}
+
+.green {
+  color: green;
+}
+
+.e {
+  font-size: 100px;
+  float: left;
+  font-weight: bold;
+  transform: rotate(-15deg);
+}

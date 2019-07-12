@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul{
+    list-style:none;
+}
+.container{
+    width:1120px;
+    margin:0 auto;
+}
+.tab{
+    width:1004px;
+    margin:0 auto;
+    border:1px solid #aaa;
+}
+.tab-control{
+    overflow:hidden;
+}
+.tab-control li{
+    width:200px;
+    float:left;
+    background-color:#ccc;
+    border-top:3px solid #aaa;
+    font:bold 22px/40px "宋体";
+    text-align:center;
+    cursor:pointer;
+    color:#000;
+
+
+}
+.tab-control li.active{
+    border-top:3px solid red;
+    background-color:#fff;
+    color:red;
+
+}
+
+.tab-control li+li{
+    border-left:1px solid #aaa;
+}
+.tab-content{
+    width:1000px;
+}
+.tab-content .item {
+    display:none;
+}
+.tab-content .item.active {
+    display:block;
+}
+.tab-content .item img{
+    width:100%;
+}

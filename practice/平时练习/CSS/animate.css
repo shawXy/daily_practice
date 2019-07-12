@@ -1,0 +1,354 @@
+.first,.second,.third,.forth,.fifth,.sixth{
+	position: relative;
+	border: 1px dashed #ccc;
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin: 10px;
+	background: #6b34a0;
+	}
+/* 眼睛转动开始 */
+.eye{
+	position: relative;
+	width: 50px;
+	height: 50px;
+	background: #fff;
+	border-radius: 50%;
+	margin-top: 75px;
+	margin-left: 35px;
+	box-shadow: 80px 0px 0px 0px #fff;
+}
+.look{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: #000;
+	border-radius: 50%;
+	margin-top: 30px;
+	margin-left: 5px;
+	box-shadow: 80px 0 0 0 #000;
+	animation: eyes 3s linear infinite alternate-reverse;/* alternate */
+}
+@-webkit-keyframes eyes {
+	0% { margin-left: 5px; }
+	50% { margin-top: 35px }
+	100% {margin-left: 30px;
+	}
+}
+@-moz-keyframes eyes {
+	0% { margin-left: 5px; }
+	50% {  margin-top: 35px}
+	100% {margin-left: 30px; 
+	}
+}
+@keyframes eyes {
+	0% { margin-left: 5px; }
+	50% { margin-top: 35px}
+	100% {margin-left: 30px; 
+	}
+}
+/* 眼睛转动结束 */
+
+/* 圆圈放大开始 */
+.line, .line1{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	border-radius: 50%;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 0.5;
+	background: #fff;
+	animation: big-small 4s ease-in-out infinite alternate;
+}
+.line1 {
+	animation-delay: -2s;
+}
+@-webkit-keyframes big-small {
+	0%,100% { transform: scale(0.0); }
+	50% { transform: scale(1.0); }
+}
+@-moz-keyframes big-small {
+	0%,100% { transform: scale(0.0); }
+	50% { transform: scale(1.0); }
+}
+@keyframes big-small {
+	0%,100% { transform: scale(0.0); }
+	50% { transform: scale(1.0); }
+}
+/* 圆圈转动结束 */
+
+/* 琴键效果开始 */
+.outer {
+	width: 126px;
+	height: 40px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.rect {
+	width: 8px;
+	height: 40px;
+	background-color: #fff;
+	float:left;
+	margin: 5px; 
+	animation: keyboard 2s ease-in-out infinite;
+
+}
+.rec1 {
+	animation-delay: -1.2s;
+}
+.rec2 {
+	animation-delay: -1.1s;
+}
+.rec3 {
+	animation-delay: -1.0s;
+}
+.rec4 {
+	animation-delay: -0.9s;
+}
+.rec5 {
+	animation-delay: -0.8s;
+}
+.rec6 {
+	animation-delay: -0.7s;
+}
+.rec7 {
+	animation-delay: -0.6s;
+}
+
+
+@-webkit-keyframes keyboard {
+	0%,40%,100% { transform: scaleY(0.4);  }
+	20% { transform: scaleY(1.2); }
+}
+@-moz-keyframes keyboard {
+	0%,40%,100% { transform: scaleY(0.4);  }
+	20% { transform: scaleY(1.2); }
+}
+@keyframes keyboard {
+	0%,40%,100% { transform: scaleY(0.4);  }
+	20% { transform: scaleY(1.2); }
+}
+
+/* 琴键效果结束 */
+
+/* 吃豆豆效果开始 */
+.cir, .cir1 {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	border-left: 25px solid #fff;
+	border-top: 25px solid #fff;
+	border-bottom: 25px solid #fff;
+	border-right: 25px solid transparent;
+	border-radius: 50%;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.cir {
+	animation: up_half 1s infinite;
+}
+.cir1 {
+	animation: down_half 1s infinite;
+}
+.cir3, .cir4, .cir5 {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #fff;
+	margin: auto;
+	bottom: 0;
+	top: 0;
+	transform: translate(0, 0);
+	right: 10px;
+	animation: dots 2s linear infinite;
+}
+.cir3 {
+	animation-delay: .2s;
+}
+.cir4 {
+	animation-delay: 1.2s;
+}
+.cir5 {
+	animation-delay: 2.2s;
+}
+
+@-webkit-keyframes up_half {
+	0%,100% { transform: rotate(90deg)  }
+	50% { transform: rotate(0deg) }
+}
+@-moz-keyframes up_half {
+	0%,100% { transform: rotate(90deg)  }
+	50% { transform: rotate(0deg) }
+}
+@keyframes up_half {
+	0%,100% { transform: rotate(90deg)  }
+	50% { transform: rotate(0deg) }
+}
+
+@-webkit-keyframes down_half {
+	0%,100% { transform: rotate(-90deg)  }
+	50% { transform: rotate(0deg) }
+}
+@-moz-keyframes down_half {
+	0%,100% { transform: rotate(-90deg)  }
+	50% { transform: rotate(0deg) }
+}
+@keyframes down_half {
+	0%,100% { transform: rotate(-90deg)  }
+	50% { transform: rotate(0deg) }
+}
+
+@-webkit-keyframes dots {
+	70% { opacity: : 0.5;}
+	100% { transform: translate(-100px, 0); }
+}
+@-moz-keyframes dots {
+	70% { opacity: : 0.5;}
+	100% { transform: translate(-100px, 0);}
+}
+@keyframes dots {
+	70% { opacity: : 0.5;}
+	100% { transform: translate(-100px, 0);}
+}
+
+/* 吃豆豆效果结束 */
+
+/* 转圈圈效果开始 */
+.fifth > div {
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.fifth > div:nth-child(1) {
+	
+	width: 60px;
+	height: 60px;
+	border: 4px solid #fff;
+	border-left: 0;
+	border-top: 0;
+	border-radius: 50%;
+	animation: sc_outer 1s cubic-bezier(0.35, .55, .3, .6) infinite;
+}
+.fifth > div:nth-child(2) {
+	width: 30px;
+	height: 30px;
+	border: 3px solid #fff;
+	border-bottom: 0;
+	border-right: 0;
+	border-radius: 50%;
+	animation: semicircle 1s cubic-bezier(0.4, .65, .45, .66) infinite;
+}
+@-webkit-keyframes semicircle {
+	from { transform: rotate(0deg) }
+	to { transform: rotate(360deg) }
+}
+@-moz-keyframes semicircle {
+	from { transform: rotate(0deg) }
+	to { transform: rotate(360deg) }
+}
+@keyframes semicircle {
+	from { transform: rotate(0deg) }
+	to { transform: rotate(360deg) }
+}
+
+@-webkit-keyframes sc_outer {
+	from { transform: rotate(3600deg) }
+	to { transform: rotate(0deg) }
+}
+@-moz-keyframes sc_outer {
+	from { transform: rotate(360deg) }
+	to { transform: rotate(0deg) }
+}
+@keyframes sc_outer {
+	from { transform: rotate(360deg) }
+	to { transform: rotate(0deg) }
+}
+/* 转圈圈效果结束 */
+
+/* 转圈加载效果开始 */
+.ha {
+	width: 12px;
+	height: 12px;
+	background: #fff;
+	opacity: 0;
+	border-radius: 50%;
+	position: absolute;
+	 animation: colorh 4s linear infinite;
+}
+.ha:nth-child(1){
+	top: 52px;
+	left: 100px;
+	animation-delay: .5s;
+
+}
+.ha:nth-child(2){
+	top: 66px;
+	left: 134px;
+	animation-delay: 1.0s;
+}
+.ha:nth-child(3){
+	top: 100px;
+	left: 148px;
+	animation-delay: 1.5s;
+}
+.ha:nth-child(4){
+	top: 134px;
+	left: 134px;
+	animation-delay: 2.0s;
+}
+.ha:nth-child(5){
+	top: 148px;
+	left: 100px;
+	animation-delay: 2.5s;
+}
+.ha:nth-child(6){
+	top: 134px;
+	left: 66px;
+	animation-delay: 3.0s;
+}
+.ha:nth-child(7){
+	top: 100px;
+	left: 52px;
+	animation-delay: 3.5s;
+}
+.ha:nth-child(8){
+	top: 66px;
+	left: 66px;
+	animation-delay: 4.0s;
+}
+
+@-webkit-keyframes colorh {
+	0%, 100% { opacity: 0;  }
+	40% { opacity: 1; }
+}
+
+@-moz-keyframes colorh {
+	0%, 100% { opacity: 0;  }
+	40% { opacity: 1; }
+}
+@keyframes colorh {
+	0%, 100% { opacity: 0;  }
+	40% { opacity: 1; }
+}
+
+/* 转圈加载效果结束 */
+
+
+
+

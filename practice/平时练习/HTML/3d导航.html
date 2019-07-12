@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3d导航栏</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    li {
+      list-style: none;
+    }
+    
+    .outer {
+      width: 50%;
+      margin: 100px auto;
+    }
+    
+    .outer li {
+      float: left;
+      width: 200px;
+      height: 40px;
+      /* perspective: 1000px; */
+      line-height: 40px;
+      text-align: center;
+      margin-right: 10px;
+      position: relative;
+      transition: all .4s;
+      transform-style: preserve-3d;
+    }
+    
+    .outer li>div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .son1 {
+      background-color: pink;
+      color: #fff;
+      transform: translateZ(20px);
+    }
+    
+    .son2 {
+      background-color: skyblue;
+      color: #ffffff;
+      z-index: -1;
+      transform: translateY(20px) rotateX(-90deg);
+    }
+    
+    .outer li:hover {
+      transform: rotateX(90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <ul>
+      <li>
+        <div class="son1">hello world!</div>
+        <div class="son2">你好！</div>
+      </li>
+      <li>
+        <div class="son1">hello world!</div>
+        <div class="son2">你好！</div>
+      </li>
+      <li>
+        <div class="son1">hello world!</div>
+        <div class="son2">你好！</div>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

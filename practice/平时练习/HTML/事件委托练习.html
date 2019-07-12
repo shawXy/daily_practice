@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件委托练习</title>
+  <style>
+    li {
+      list-style: none;
+      line-height: 40px;
+      margin-top: 10px;
+      background-color: #87ceed;
+      padding-left: 20px;
+      cursor: pointer;
+    }
+    
+    .outer {
+      width: 60%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <ul>
+      <li>这是第一个li里的内容</li>
+      <li>这是第二个li里的内容</li>
+      <li>这是第三个li里的内容</li>
+      <li>这是第四个li里的内容</li>
+      <li>这是第五个li里的内容</li>
+      <li>这是第六个li里的内容</li>
+      <li>这是第七个li里的内容</li>
+      <li>这是第八个li里的内容</li>
+    </ul>
+  </div>
+</body>
+<script>
+  var ul = document.querySelector('.outer ul');
+  ul.onclick = function(e) {
+
+    if (e.target.nodeName == 'LI') {
+      console.log(e.target.innerText);
+    }
+  }
+  var li = document.createElement('li');
+  li.innerText = '这是动态添加的li里的内容';
+  ul.appendChild(li);
+</script>
+
+</html>

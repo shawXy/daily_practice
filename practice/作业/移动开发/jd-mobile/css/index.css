@@ -1,0 +1,214 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-size: 14px;
+  background-color: #ccc;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.top {
+  width: 100%;
+  height: 44px;
+  background-color: #333333;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.top li {
+  float: left;
+  list-style: none;
+  height: 44px;
+  line-height: 44px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.top li.close img {
+  width: 10px;
+}
+
+.top li.logo img {
+  width: 30px;
+  vertical-align: middle;
+}
+
+.top .close {
+  width: 8%;
+}
+
+.top .logo {
+  width: 10%;
+}
+
+.top .text {
+  width: 57%;
+}
+
+.top .open {
+  background-color: #F63515;
+  width: 25%;
+}
+
+.search {
+  width: 100%;
+  height: 44px;
+  position: fixed;
+  max-width: 640px;
+  min-width: 320px;
+  /* background-color: pink; */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 44px;
+}
+
+.menu::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 18px;
+  background: url(../images/s-btn.png) no-repeat;
+  background-size: 20px 18px;
+  margin: 14px 0 0 16px;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  color: #fff;
+  line-height: 44px;
+  text-align: center;
+}
+
+.center {
+  margin: 0 45px;
+  background-color: #fff;
+  height: 30px;
+  border-radius: 15px;
+  margin-top: 7px;
+}
+
+.center {
+  position: relative;
+}
+
+.center .icon1 {
+  position: absolute;
+  top: 8px;
+  left: 13px;
+  width: 20px;
+  height: 15px;
+  background: url(../images/jd.png) no-repeat;
+  background-size: 20px 15px;
+}
+
+.center .icon1:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 15px;
+  left: 25px;
+  background-color: #ccc;
+}
+
+.center .icon2 {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 9px;
+  left: 50px;
+  background: url(../images/jd-sprites.png) no-repeat -84px 0;
+  background-size: 200px;
+}
+
+.main {
+  box-sizing: border-box;
+}
+
+.slid img {
+  width: 100%;
+}
+
+.brand li {
+  float: left;
+  width: 33.33%;
+}
+
+.brand li img {
+  width: 100%;
+}
+
+nav li {
+  padding-top: 10px;
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+p {
+  margin: 10px 0;
+}
+
+nav li img {
+  width: 40px;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  line-height: 0;
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.footer {
+  width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.footer div {
+  float: left;
+}
+
+.footer .one {
+  width: 50%;
+}
+
+.footer .two,
+.footer .three {
+  box-sizing: border-box;
+  width: 25%;
+  border-left: 1px solid;
+}
+
+.footer img {
+  width: 100%;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #87ceed;
+    }
+    
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80px;
+    }
+    
+    .toLeft {
+      transform: rotateY(180deg);
+    }
+    
+    .toTop {
+      transform: rotateZ(-90deg);
+    }
+    
+    .toRight {
+      transform: rotateZ(90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <img src="../images/xn.png" alt="">
+</body>
+<script>
+  var img = document.querySelector('img');
+  var x = 0;
+  var y = 0;
+  document.onkeydown = function(e) {
+    if (e.keyCode == 37) {
+      //左
+      x -= 20;
+      img.className = 'toLeft';
+    } else if (e.keyCode == 38) {
+      //上
+      y -= 20;
+      img.className = 'toTop';
+    } else if (e.keyCode == 39) {
+      //右
+      x += 20;
+      img.className = '';
+    } else if (e.keyCode == 40) {
+      //下
+      y += 20;
+      img.className = 'toRight';
+    }
+    x = x < 0 ? 0 : x;
+    y = y < 0 ? 0 : y;
+
+    img.style.left = x + 'px';
+    img.style.top = y + 'px';
+  }
+</script>
+
+</html>

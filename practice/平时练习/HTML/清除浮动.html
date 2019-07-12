@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>清除浮动</title>
+  <style>
+    .father {
+      width: 500px;
+      /* height: 500px; */
+      border: 1px solid;
+      background-color: #0f0;
+      /* overflow: hidden; */
+    }
+    /* .clearfix:after {
+			content: "";
+			display: block;
+			height: 0;
+			visibility: hidden;
+			clear: both;
+
+		}
+		.clearfix {
+			*zoom: 1;
+		} 
+		/* .clearfix:before, .clearfix:after {
+			content: "";
+			display: table;
+		}
+		.clearfix:after {
+			clear: both;
+		}
+		.clearfix {
+			*zoom: 1;
+		} */
+    
+    .son1 {
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+      float: left;
+    }
+    
+    .son2 {
+      width: 200px;
+      height: 200px;
+      background-color: #f00;
+      float: left;
+    }
+    
+    .outer {
+      height: 40px;
+      background: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father clearfix">
+    <div class="son1"></div>
+    <div class="son2"></div>
+  </div>
+  <!-- <div style="clear: both"></div> -->
+  <!-- <br>	 -->
+  <div class="outer"></div>
+</body>
+
+</html>

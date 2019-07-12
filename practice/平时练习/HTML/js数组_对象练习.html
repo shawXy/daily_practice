@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  //--------------------1、通过字面量创建对象
+
+  /*   var obj = {
+      name: '路飞',
+      age: 15,
+      gender: '男',
+      dream: function() {
+        document.write("我是要成为海贼王的男人！");
+      }
+    }
+    alert(obj.name);
+    obj.dream(); */
+
+  // -------------------2、通过Object构造函数创建对象
+
+  /* var obj = new Object();
+  obj.name = '索隆';
+  obj.age = '20';
+  obj.gender = '男';
+  obj.dream = function() {
+    document.write('我要成为世界第一剑豪！');
+  }
+  alert(obj.name);
+  obj.dream(); */
+
+
+  // -------------------3、通过自定义构造函数创建对象
+
+
+  /* function OnePiece(name, age, gender) {
+      this.name = name;
+      this.age = age;
+      this.gender = gender;
+      this.dream = function() {
+        document.write(':我要成为航海气象员哈哈哈哈');
+      }
+    }
+    var member1 = new OnePiece('娜美', 18, '女');
+    document.write(member1.name);
+    member1.dream(); */
+
+  //-----------------复杂数据类型作为函数的参数在内存存储
+  /*   function Person(nme, age) {
+      this.name = name;
+      this.age = age;
+      this.sayHi = function() {
+        console.log("你好！");
+      }
+    }
+    var p1 = new Person('张三', 18);
+
+    function getPerson(person) {
+      person.name = '李四';
+      person = new Person('王五', 20);
+      console.log(person.name);
+    }
+
+    getPerson(p1);
+    console.log(p1.name); //李四 */
+
+
+
+
+  // ----------------封装一个生成m到n之间的随机整数
+  /* function getRandom(n, m) {
+    var x = Math.floor(Math.random() * (m - n + 1) + n);
+    return x;
+  }
+  console.log(getRandom(20, 50)); */
+
+
+
+  //-----------------写一个函数，格式化日期对象，返回 yyyy-mm-dd HH:mm：ss 形式
+  /*   function getDateForm() {
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var day = date.getDate();
+      var hour = date.getHours();
+      var minute = date.getMinutes();
+      var second = date.getSeconds();
+      if (month < 10) {
+        month = '0' + month;
+      }
+      if (day < 10) {
+        day = '0' + day;
+      }
+      if (hour < 10) {
+        hour = '0' + hour;
+      }
+      if (minute < 10) {
+        minute = '0' + minute;
+      }
+      if (second < 10) {
+        second = '0' + second;
+      }
+      var time = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+      return time;
+    }
+    var t = getDateForm();
+    console.log(t); */
+
+  // ------------------------------------去除数组中重复值
+  /* var arr = [2, 3, 4, 3, 2, 6, 5, 8, 6, 9, 10];
+  var list = [];
+  for (var i = 0; i < arr.length; i++) {
+    var temp = arr[i];
+    var flag = true;
+    for (var j = 0; j < list.length; j++) {
+      if (list[j] == temp) {
+        flag = false;
+      }
+    }
+    if (flag) {
+      list[list.length] = arr[i];
+    }
+  }
+  document.write(list); */
+
+  //  ----------------------将数组中每一个'a' 的位置输出到控制台中
+  //var arr = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'a', 'g', 'h'];
+  /*   var i = 0;
+    while (i < arr.length) {
+      if (arr[i] == 'a') {
+        console.log(i);
+      }
+      i++;
+    } */
+
+
+
+  // --------------------'qweqweoeqweroqweqweodfsfdo' 查找字符串中所有字母 'o'出现的位置
+  //  --------------------把字符串中的所有字母'o'替换成 '-';
+  /*   var str = 'qweqweoeqweroqweqweodfsfdo';
+    for (var i = 0; i < str.length; i++) {
+      // if (str[i] == 'o') {
+      //   console.log(i)
+      // }
+      str = str.replace('o', '-');
+    }
+    console.log(str); */
+
+
+  /* var str2 = '我爱中华人民共和国';
+  var n = str2.indexOf('中');
+  var m = str2.substr(n, 2);
+  console.log(m); */
+
+  /* var str3 = 'qweqweoeqweroqweqweodfsfdo';
+  str3 = str3.replace(/o/g, '-');
+  console.log(str3); */
+
+
+  /*   var url = 'https://www.test.com/login/index.html';
+
+    function getData(url) {
+      var arr = url.split('.');
+      var str = arr[arr.length - 1];
+      return str;
+    }
+    var re = getData(url);
+    console.log(re); */
+
+  /* var url = 'https://www.test.com/login?name=zs&pwd=123';
+
+  function getData(url) {
+    var index = url.indexOf('?');
+    var str = url.substr(index + 1);
+    var arr = str.split('&');
+    for (var i = 0; i < arr.length; i++) {
+
+      var arr2 = arr[i].split('=');
+      console.log(arr2);
+    }
+  }
+  getData(url); */
+</script>
+
+</html>

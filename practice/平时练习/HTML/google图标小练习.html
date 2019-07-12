@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/demo.css">
+  <style>
+    .test {
+      width: 500px;
+      height: 500px;
+      background-color: #b7ceed;
+      border: 1px solid;
+      margin-left: 10px;
+    }
+    
+    .little {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <span class="blue">G</span>
+  <span class="red">o</span>
+  <span class="orange">o</span>
+  <span class="blue">g</span>
+  <span class="green">l</span>
+  <span class="red e">e</span>
+
+  <div style="clear:both"></div>
+
+  <div class="test">
+    <div class="little">
+
+    </div>
+  </div>
+</body>
+
+<script>
+  var test = document.querySelector('.test');
+  var little = document.querySelector('.little');
+  test.onclick = function(e) {
+    console.log(e.offsetX);
+
+  }
+  little.onclick = function(e) {
+    //鼠标参照当前元素的位置
+    console.log(e.offsetX);
+    e.stopPropagation();
+  }
+</script>
+
+</html>

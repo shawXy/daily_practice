@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <ul id="menu">
+      <li>
+        <a href="javascript:void(0);">一级菜单1</a>
+        <ul class="ul">
+          <li>
+            <a href="javascript:void(0);">二级菜单11</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">二级菜单12</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">二级菜单13</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0);">一级菜单2</a>
+        <ul>
+          <li>
+            <a href="javascript:void(0);">二级菜单21</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">二级菜单22</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">二级菜单23</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0);">一级菜单3</a>
+        <ul>
+          <li>
+            <a href="javascript:void(0);">二级菜单31</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">二级菜单32</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">二级菜单33</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <script src="lib/jquery-1.12.4.js"></script>
+  <!--  <script>
+    // 1. 鼠标进入一级li，显示一级li内部的ul 
+    $('#menu > li').mouseenter(function(){
+      // 当前一级li内部的ul
+      $(this)    // 当前的li
+      .children('ul')  // 内部的ul
+      .css('display','block');  // ul样式设置为显示
+    });
+    // 2. 鼠标离开一级li，隐藏一级li内部的ul 
+    $('#menu > li').mouseleave(function(){
+      // 当前一级li内部的ul
+      $(this)    // 当前的li
+      .find('ul')  // 内部的ul
+      .css('display','none');  // ul样式设置为隐藏
+    });
+  </script> -->
+  <script>
+    //动画版完成
+    $('#menu li').mouseenter(function() {
+      $(this).find('ul').stop().slideDown(500);
+    })
+    $('#menu li').mouseleave(function() {
+      $(this).find('ul').stop().slideUp(500);
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+.w{
+  width: 1191px;
+  margin:0 auto;
+}
+.box1 {
+  height: 935px;
+}
+.box2 {
+  height: 107px;
+}
+.box2.active {
+  position: fixed;
+  top:0;
+
+}
+
+.top {
+  width: 50px;
+  height: 50px;
+  font:bold 50px/50px '宋体';
+  text-align:center;
+  color: #fff;
+  background-color: blue;
+  cursor:pointer;
+  position:fixed;
+  bottom: 20px;
+  right: 0;
+  display:none;
+}
+
+.top.active {
+  display:block;
+}

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    span {
+      float: left;
+      font: bold 200px '宋体';
+      color: gold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <!-- ★☆ -->
+    <span>☆</span>
+    <span>☆</span>
+    <span>☆</span>
+    <span>☆</span>
+    <span>☆</span>
+  </div>
+  <script src="lib/jquery-1.12.4.js"></script>
+  <script>
+    $('span').on('mouseover', function() {
+      $(this).text('★').prevAll().text('★').end().nextAll().text('☆');
+    })
+    var index;
+    $('span').on('click', function() {
+      index = $(this).index();
+      $(this).text('★').prevAll().text('★').end().nextAll().text('☆');
+
+    })
+
+
+    $('div').on('mouseout', function() {
+      if (index == undefined) {
+        $('span').text('☆');
+      } else {
+        $('span').eq(index).text('★').prevAll().text('★').end().nextAll().text('☆');
+      }
+      // $('div').off('mouseout');
+      // $(this).off('click');
+
+    })
+  </script>
+</body>
+
+</html>

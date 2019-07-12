@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .outer {
+      width: 300px;
+      height: 800px;
+      margin: 100px auto;
+      border: 1px solid #ccc;
+      overflow: auto;
+    }
+    
+    div {
+      width: 200px;
+      position: relative;
+    }
+    
+    span {
+      position: absolute;
+      right: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--   <div class="outer">
+    <ul>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+      <li>内容</li>
+    </ul>
+  </div>
+  <button>回顶部</button> -->
+  <div>
+    <input type="text">
+    <span>kkk</span>
+  </div>
+
+
+</body>
+<script>
+  var outer = document.querySelector('.outer');
+  var btn = document.querySelector('button');
+  btn.onclick = function() {
+    outer.scrollTop = 0;
+  }
+</script>
+
+</html>

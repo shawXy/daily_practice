@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #333;
+  }
+  li {
+      list-style: none;
+  }
+  
+  body {
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    font-size: 14px;
+    background-color: #ccc;
+  }
+  img {
+    vertical-align: middle;
+  }
+  //-----------------------------
+  .top {
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    background-color: #222;
+    ul{
+        display: flex;
+      li {
+          color: #fff;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          &.close { 
+             flex:8%;
+              img {
+                  width: 10px;
+              }
+          }
+          &.logo {
+              flex:10%;
+              img {
+                  width: 30px;
+              }
+          }
+          &.text {
+            flex:56%;
+           
+        }
+        &.open {
+            background-color: #F63515;
+            flex:26%;
+            
+        }
+      }
+    }
+
+  }
+  .search {
+      height: 44px;
+      line-height: 44px;
+      width: 100%;
+      position: fixed;
+      max-width: 640px;
+      min-width: 320px;
+      display: flex;
+      color: #ffffff;
+    .menu {
+        width: 40px;
+        &::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 18px;
+            background: url(../images/s-btn.png) no-repeat;
+            background-size: 20px 18px;
+            margin: 14px 0 0 16px;
+        }
+    }
+    .center {
+        flex: 1;
+        position: relative;
+        background-color: #fff;
+        margin: 7px 10px;
+        border-radius: 15px;
+        .icon1 {
+            position: absolute;
+            top: 8px;
+            left: 13px;
+            width: 20px;
+            height: 15px;
+            background: url(../images/jd.png) no-repeat;
+            background-size: 20px 15px;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 1px;
+                height: 15px;
+                left: 25px;
+                background-color: #ccc;
+            }
+        }
+        .icon2 {
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 9px;
+            left: 50px;
+            background: url(../images/jd-sprites.png) no-repeat -84px 0;
+            background-size: 200px;
+        }
+    }
+    .right {
+        width: 40px;
+        display: flex;
+        justify-content: center;
+    }
+  }
+  .main {
+      .slid {
+          img {
+              width: 100%;
+          }
+      }
+      .brand {
+          width: 100%;
+          ul {
+              display: flex;
+              li {
+                  flex: 1;
+                  img {
+                      width: 100%;
+                  }
+              }
+          }
+      }
+  }
+
+  nav {
+      width: 100%;
+      ul {
+          display: flex;
+          flex-wrap: wrap;
+          li {
+            flex: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+            img {
+                width: 40px;
+                padding-bottom: 10px;
+            }
+          }
+      }
+  }
+  .footer {
+      width: 100%;
+      display: flex;
+      padding-top: 10px;
+      box-sizing: border-box;
+      div {
+        img {
+            width: 100%;
+        }
+      }
+      .one {
+          flex: 2;
+      }
+      .two{
+          flex: 1;
+          border-left: 1px solid;
+      }
+      .three {
+          flex: 1;
+          border-left: 1px solid;
+      }
+  }

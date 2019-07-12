@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .time {
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      background-color: #b7ceed;
+      color: #ffffff;
+      border-radius: 50%;
+      line-height: 400px;
+      font-size: 200px;
+      text-align: center;
+    }
+    
+    .timer {
+      width: 460px;
+      margin: 50px auto;
+      font-size: 80px;
+      /* background-color: #87ceed; */
+    }
+    
+    .timer div {
+      text-align: center;
+      width: 100px;
+      padding: 10px;
+      line-height: 200px;
+      background-color: #87ceed;
+      float: left;
+      color: #ffffff;
+      border-radius: 8px;
+    }
+    
+    .timer span {
+      font-size: 100px;
+      float: left;
+      line-height: 200px;
+      padding: 0px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="time">
+    60
+  </div>
+  <div class="timer">
+    <div class="hour">00</div><span>:</span>
+    <div class="minute">00</div><span>:</span>
+    <div class="second">00</div>
+  </div>
+</body>
+<script>
+  //倒计时
+  var time = document.querySelector('.time');
+  var n = 60;
+  fall();
+  var setTime = setInterval(function() {
+    fall();
+
+  }, 1000);
+
+  function fall() {
+    time.innerHTML = n;
+    n -= 1;
+    if (n < 3) {
+      time.style.color = 'red';
+      if (n < 0) {
+        clearInterval(setTime);
+      }
+    }
+
+  }
+</script>
+<script>
+  var hour = document.querySelector('.hour');
+  var minute = document.querySelector('.minute');
+  var second = document.querySelector('.second');
+
+  getTime();
+
+  function getTime() {
+    var start = new Date();
+    var end = new Date('2019/6/29 18:00:00');
+    var val = end - start;
+    var h = parseInt(val / 1000 / 3600);
+    var m = parseInt(val / 1000 / 60 % 60);
+    var s = parseInt(val / 1000 % 60);
+    //console.log(s);
+    h = h < 10 ? '0' + h : h;
+    m = m < 10 ? '0' + m : m;
+    s = s < 10 ? '0' + s : s;
+
+    hour.innerHTML = h;
+    minute.innerHTML = m;
+    second.innerHTML = s;
+    if (val < 0) {
+      clearInterval(setTimer);
+      hour.innerHTML = '00';
+      minute.innerHTML = '00';
+      second.innerHTML = '00';
+    }
+
+  }
+
+  var setTimer = setInterval(function() {
+    getTime();
+  }, 1000);
+</script>
+
+</html>
