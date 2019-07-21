@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  //   for (var i = 0; i < 4; i++) {
+  //     setTimeout(function() {
+  //       console.log(i);
+  //     }, 300);
+  //   }
+  //4 4 4 4
+  //普通代码会先执行，i先++到4，之后i一直为4
+  // =========>正常执行出0123
+  //方法一:
+  for (var i = 0; i < 4; i++) {
+    setTimeout(
+      (function(i) {
+        return function() {
+          console.log(i);
+        };
+      })(i),
+      300
+    );
+  }
+  // 或者
+  for (var i = 0; i < 4; i++) {
+    setTimeout(
+      (function() {
+        var temp = i;
+        return function() {
+          console.log(temp);
+        };
+      })(),
+      300
+    );
+  }
+  //这个是通过自执行函数返回一个函数,然后在调用返回的函数去获取自执行函数内部的变量,此为闭包
+
+  //方法发二:
+  for (var i = 0; i < 4; i++) {
+    (function(i) {
+      setTimeout(function() {
+        console.log(i);
+      }, 300);
+    })(i);
+  }
+</script>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>loading</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .fade {
+      position: fixed;
+      width: 300px;
+      height: 250px;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .forth {
+      position: relative;
+      border: 1px dashed #ccc;
+      width: 200px;
+      height: 200px;
+      float: left;
+      margin: 10px;
+    }
+    /* 吃豆豆效果开始 */
+    
+    .cir,
+    .cir1 {
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      border-left: 25px solid #fff;
+      border-top: 25px solid #fff;
+      border-bottom: 25px solid #fff;
+      border-right: 25px solid transparent;
+      border-radius: 50%;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    
+    .cir {
+      animation: up_half 1s infinite;
+    }
+    
+    .cir1 {
+      animation: down_half 1s infinite;
+    }
+    
+    .cir3,
+    .cir4,
+    .cir5 {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin: auto;
+      bottom: 0;
+      top: 0;
+      transform: translate(0, 0);
+      right: 10px;
+      animation: dots 2s linear infinite;
+    }
+    
+    .cir3 {
+      animation-delay: .2s;
+    }
+    
+    .cir4 {
+      animation-delay: 1.2s;
+    }
+    
+    .cir5 {
+      animation-delay: 2.2s;
+    }
+    
+    @-webkit-keyframes up_half {
+      0%,
+      100% {
+        transform: rotate(90deg)
+      }
+      50% {
+        transform: rotate(0deg)
+      }
+    }
+    
+    @-moz-keyframes up_half {
+      0%,
+      100% {
+        transform: rotate(90deg)
+      }
+      50% {
+        transform: rotate(0deg)
+      }
+    }
+    
+    @keyframes up_half {
+      0%,
+      100% {
+        transform: rotate(90deg)
+      }
+      50% {
+        transform: rotate(0deg)
+      }
+    }
+    
+    @-webkit-keyframes down_half {
+      0%,
+      100% {
+        transform: rotate(-90deg)
+      }
+      50% {
+        transform: rotate(0deg)
+      }
+    }
+    
+    @-moz-keyframes down_half {
+      0%,
+      100% {
+        transform: rotate(-90deg)
+      }
+      50% {
+        transform: rotate(0deg)
+      }
+    }
+    
+    @keyframes down_half {
+      0%,
+      100% {
+        transform: rotate(-90deg)
+      }
+      50% {
+        transform: rotate(0deg)
+      }
+    }
+    
+    @-webkit-keyframes dots {
+      70% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate(-100px, 0);
+      }
+    }
+    
+    @-moz-keyframes dots {
+      70% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate(-100px, 0);
+      }
+    }
+    
+    @keyframes dots {
+      70% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate(-100px, 0);
+      }
+    }
+    /* 吃豆豆效果结束 */
+  </style>
+</head>
+
+<body>
+  <div class="fade">
+  </div>
+  <div class="window">
+    <div class="forth">
+      <div class="cir"></div>
+      <div class="cir1"></div>
+      <div class="cir3"></div>
+      <div class="cir4"></div>
+      <div class="cir5"></div>
+    </div>
+  </div>
+
+  <button class="btn">点击刷新</button>
+
+  <script src="./assets/jquery.js"></script>
+  <script>
+    $(function() {
+      $.ajaxSetup({
+        beforeSend: function() {
+          //这里可以插入加载的小动画
+          $('.fade').show();
+          $('.window').show();
+        },
+        complete: function() {
+          // 这里隐藏加载动画
+          $('.fade').hide();
+          $('.window').hide();
+        }
+      })
+      $.get('/big-data', function(result) {
+        console.log(result);
+      })
+    })
+    $('.btn').click(function() {
+      $.get('/big-data', function(result) {
+        console.log(result);
+      })
+    })
+  </script>
+</body>
+
+</html>

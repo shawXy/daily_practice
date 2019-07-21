@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>留言板</title>
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.3/dist/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="display-1">留言板123</h1>
+    <hr>
+    <div id="loading">正在拼命加载数据.....</div>
+    <ul id="messages" class="list-unstyled">
+
+    </ul>
+    <hr>
+    <div class="form-group">
+      <label for="txt_name">称呼：</label>
+      <input class="form-control" id="txt_name" name="xxx" type="text">
+    </div>
+    <div class="form-group">
+      <label for="txt_content">留言：</label>
+      <textarea class="form-control" id="txt_content" cols="80" rows="10"></textarea>
+    </div>
+    <button type="button" id="btn_send" class="btn btn-primary">提交</button>
+  </div>
+
+  <script>
+    //获取留言列表
+    var xhr = new XMLHttpRequest();
+    show();
+
+    function show() {
+      xhr.open('GET', '/getMsg');
+      xhr.send(null);
+      xhr.onload = function() {
+        var data = JSON.parse(this.response);
+        //console.log(data)
+        var str = '';
+        for (var i in data) {
+          str += `
+          <li class="media">
+            <img class="mr-3" src="avatar.png" alt="张三">
+            <div class="media-body">
+              <h4>${data[i].name}</h4>
+              <p>${data[i].content}</p>
+            </div>
+          </li>
+          `
+        }
+        document.querySelector('#messages').innerHTML = str;
+      }
+    }
+  </script>
+
+  <script>
+    //留言
+    document.getElementById('btn_send').onclick = function() {
+      var txt_name = document.getElementById('txt_name');
+      var txt_content = document.getElementById('txt_content');
+      xhr.open('post', '/addMsg');
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.send(`name=${txt_name.value}&content=${txt_content.value}`)
+      xhr.onload = function() {
+        if (this.response === 'true') {
+          show();
+          txt_name.value = '';
+          txt_content.value = '';
+        } else {
+          alert('添加失败！');
+        }
+      }
+    }
+  </script>
+  <!-- <li class="media">
+      <img class="mr-3" src="avatar.png" alt="张三">
+      <div class="media-body">
+        <h4>张三</h4>
+        <p>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+      </div>
+    </li> -->
+</body>
+
+</html>

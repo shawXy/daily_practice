@@ -43,6 +43,29 @@
       line-height: 200px;
       padding: 0px 10px;
     }
+    
+    .timer1 {
+      width: 800px;
+      height: 100px;
+      margin: 50px auto;
+      background-color: pink;
+    }
+    
+    .timer1 div {
+      float: left;
+    }
+    
+    .left {
+      width: 300px;
+    }
+    
+    .center {
+      width: 200px;
+    }
+    
+    .right {
+      width: 300px;
+    }
   </style>
 </head>
 
@@ -54,6 +77,21 @@
     <div class="hour">00</div><span>:</span>
     <div class="minute">00</div><span>:</span>
     <div class="second">00</div>
+  </div>
+  <div style="clear: both"></div>
+
+  <div class="timer1">
+    <div class="left">
+      <input type="text" class="num" placeholder="请输入一个大于0的整数">
+    </div>
+    <div class="center">
+      <input type="button" class="start" value="开始">
+    </div>
+    <div class="right">
+      <div class="r-time">
+
+      </div>
+    </div>
   </div>
 </body>
 <script>
@@ -112,6 +150,32 @@
   var setTimer = setInterval(function() {
     getTime();
   }, 1000);
+</script>
+
+<script>
+  var timer1;
+  var startBtn = document.querySelector('.start');
+  var rTime = document.querySelector('.r-time');
+  var rTimevalue;
+  startBtn.onclick = function() {
+    clearInterval(timer1); //只有timer定义在外面，才能清除之前的定时器，不然在点击的时候找不到这个定时器
+    var timeInput = document.querySelector('.num');
+    timeInput = Number(timeInput.value);
+    console.log(timeInput.value)
+    if (timeInput > 0) {
+      rTimevalue = timeInput;
+      rTime.innerHTML = rTimevalue;
+    } else {
+      alert("请输入一个大于0的整数！");
+    }
+    timer1 = window.setInterval(function() {
+      rTimevalue--;
+      rTime.innerHTML = rTimevalue;
+      if (rTimevalue <= 0) {
+        clearInterval(timer1);
+      }
+    }, 1000);
+  }
 </script>
 
 </html>
