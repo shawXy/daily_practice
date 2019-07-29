@@ -80,12 +80,10 @@
 //获取页面所有成员
 
 $(function(){
-  $.get('/api/member-list-page?page=1',function(result){
-    var all = template('allmem',{
-      arr:result
-    })
-    $('#members').append(all);
-  })
+  // var last = null;
+  var page=1;
+  loadNext();
+
 
 //删除成员
 $('body').on('click','.text-danger',function(){
@@ -100,6 +98,48 @@ $('body').on('click','.text-danger',function(){
 
   }
   })
+
+
+  // 懒加载
+  // 当页面卷起（scrolltop）+浏览器可视窗口+滚动条距底部（自定滚到底的距离）>= 文档的高度 时开始加载接下来的数据
+
+// 添加滚动事件
+$(window).scroll(function(){
+  var scrolltop = $(document).scrollTop();
+  var view = $(window).height();
+  var doch = $(document).height();
+  if(scrolltop+view+100>=doch){
+    page++;
+    loadNext();
+  }
+})
+//加载数据的时候更新最后一条的id，通过最后一条获取下面的数据
+// var flag = false;
+// function loadNext(){
+//   flag=true;
+//   if(flag){
+//     $.get('/api/member-list-last',{last:last},function(result){
+//       console.log(result);
+//     last = result[result.length-1].id;
+//     var all = template('allmem',{
+//       arr:result
+//     })
+//     $('#members').append(all);
+//     flag=false;
+//   })
+//   }
+  
+// }
+//通过分页获取下面的数据
+function loadNext(){
+  $.get('/api/member-list-page?page='+page,function(result){
+    var all = template('allmem',{
+      arr:result
+    })
+    $('#members').append(all);
+  })
+}
+
 })
 
 

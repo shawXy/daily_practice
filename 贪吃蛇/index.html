@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>贪吃蛇</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <button id="btn1">开始</button>
+  <button id="btn2">暂停</button>
+  <input type="text" id="score" value="分数：0" readonly>
+  <!-- 地图 -->
+  <div class="map">
+    <!-- 食物 -->
+    <!-- <div class="food" style="left:0;top:0"></div> -->
+    <!-- 蛇 -->
+
+
+    <!-- <div class="snake-head" style="left:60px;top:40px"></div>
+    <div class="snake-body" style="left:60px;top:20px"></div>
+    <div class="snake-body" style="left:60px;top:0"></div>
+    <div class="snake-body" style="left:40px;top:0"></div>
+    <div class="snake-body" style="left:20px;top:0"></div>
+    <div class="snake-body" style="left:0px;top:0"></div> -->
+
+  </div>
+  <!--死亡提示 -->
+  <div class="dead">
+    <h1>Game Over</h1>
+    <span id="btn3">重新开始</span>
+  </div>
+  <!-- jQuery文件 -->
+  <script src="lib/jquery-1.12.4.js"></script>
+  <!-- 引入食物文件 -->
+  <script src="js/food.js"></script>
+  <!-- 引入蛇文件 -->
+  <script src="js/snake.js"></script>
+  <!-- 引入游戏文件 -->
+  <script src="js/game.js"></script>
+  <!-- 测试 -->
+  <script>
+    // 创建了一个游戏对象
+    var g = new Game();
+
+    // 开始
+    $('#btn1').click(function(){
+      g.start();
+    });
+    
+    // 暂停
+    $('#btn2').click(function(){
+      g.stop();
+    });
+    // 重新开始
+    $('#btn3').click(function(){
+      g.reSet();
+    });
+
+  </script>
+
+
+
+</body>
+
+</html>
