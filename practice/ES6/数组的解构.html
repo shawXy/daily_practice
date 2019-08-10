@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组的解构</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  let arr = ['apple', 'banana', 'pear', 'grape'];
+  //    变量和值一一对应
+  //   let [a, b, c, d] = ['apple', 'banana', 'pear', 'grape'];
+  //   console.log(a, b, c, d);
+  //----->apple banana pear grape
+
+  //    变量多，值少
+  //   let [a, b, c, d, e] = arr;
+  //   console.log(a, b, c, d, e);
+  //   ----->apple banana pear grape undefined
+
+  //   变量少，值多
+  //   let [a, b, c] = ['apple', 'banana', 'pear', 'grape'];
+  //   console.log(a, b, c);
+  //   ----->apple banana pear
+
+  // 按需要取值：不需要存储到变量的值用空格占位
+  //   let [, b, , d] = arr;
+  //   console.log(b, d);
+  //   ----->banana grape
+
+  //   剩余值
+  //   let [a, b, ...c] = arr;
+  //   console.log(a, b, c)
+  //   ----->apple banana ['pear', 'grape'] 得到的c是一个数组
+
+  // 复杂情况:只要符合模式就可以解构
+  let arr1 = ['zhangsan', 18, ['175cm', '65kg']];
+  let [, , [a, b]] = arr1;
+  console.log(a, b);
+  //   ----->175cm 65kg
+</script>
+
+</html>

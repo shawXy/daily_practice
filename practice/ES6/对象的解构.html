@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象的解构</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  let obj = {
+      name: '李四',
+      age: 15,
+      gender: '男'
+    }
+    //  ================================ 变量名和属性名一致
+    //   let {
+    //     name,
+    //     age
+    //   } = obj;
+    //   console.log(name, age);
+    // ------->李四 15
+
+  //   let {
+  //     name,
+  //     behavior
+  //   } = obj;
+  //   console.log(name, behavior)
+  //   ----------->李四 undefined
+
+  //   ===================================== 通过：为变量改名
+  //   let {
+  //     name,
+  //     age: old
+  //   } = obj;
+  //   console.log(name, old)
+  //   console.log(name, age)
+  //   ------------>李四 15
+
+  // =========================================== 剩余值
+  //   let {
+  //     name,
+  //     ...o
+  //   } = obj;
+  //   console.log(o);
+  //   ---------------->{age: 15, gender: "男"}
+
+  // ================================= 复杂情况，符合模式就可以解构
+  let obj1 = {
+    name: '李四',
+    age: 15,
+    gender: '男',
+    dog: {
+      name: '毛豆',
+      age: 3
+    },
+    cat: {
+      name: '胖胖',
+      age: 1
+    }
+  }
+  let {
+    dog: {
+      name,
+      age
+    }
+  } = obj1;
+  console.log(name, age);
+</script>
+
+</html>

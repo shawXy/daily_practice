@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>内置对象--Array的扩展</title>
+</head>
+
+<body>
+  <script>
+    //   ===================================================Array的扩展
+    //   -----------------合并两数组
+    // let arr1 = [1, '数组1', 'a', 'c'];
+    // let arr2 = [2, '数组2', 'b', 'd'];
+    // let arr3 = arr1.concat(arr2);
+    // console.log(arr3)
+    // let arr3 = [...arr1, ...arr2];
+    // console.log(arr3)
+
+
+
+    // ---------------------求数组最大值
+    // let arr = [1, 3, 6, 2, 6, 79, 31, 0];
+    // let max = Math.max(...arr);
+    // console.log(max);
+
+
+    // --------------------Array.from()
+    // 把伪数组转换成数组。伪数组必须有一个length属性,没有length属性的话会返回空数组
+    // let fakearr = {
+    //   0: '3',
+    //   1: 'a',
+    //   2: 3,
+    //   3: 'c',
+    //   length: 4
+    // };
+    // let arr = Array.from(fakearr);
+    // console.log(arr);
+
+
+    // -----------------------forEach()遍历数组
+    let arr = [3, 5, 2, 7, 'a', 'b', 'c'];
+    // arr.forEach(function(value, index, a) {
+    //   console.log(value);
+    //   //   console.log(index);
+    //   //   console.log(a);
+    // })
+    // 一个参数表示不要index和arr
+    // arr.forEach((item) => {
+    //   console.log(item);
+    // })
+    // 只有一个参数和一个语句，可以省略小括号和大括号
+    // arr.forEach(item => console.log(item))
+
+
+
+    // -------------------------find()和findIndex()
+    // arr.find(function(item, index, array) {
+    //   console.log(item);
+    //   //   console.log(index);
+    //   //   console.log(array);
+    // })
+    // 返回条件需要的值
+    // let res = arr.find(function(item) {
+    //   if (item == 'a')
+    //     return item;
+
+    // })
+    // console.log(res);
+
+    // arr.findIndex(function(item, index, array) {
+    //   //   console.log(item);
+    //   //   console.log(index);
+    //   //   console.log(array);
+    // })
+    // 返回满足条件的值的下标
+    // let res = arr.findIndex(function(item) {
+    //   if (item == 'a')
+    //     return item;
+
+    // })
+    // console.log(res);
+
+
+    // ------------------------------includes(),第一个参数表示要查找的值，第二个位置表示要从哪里开始查找
+    // console.log(arr.includes('a', 2)); //------true
+    // console.log(arr.includes('a', 5)); //------false
+  </script>
+</body>
+
+</html>

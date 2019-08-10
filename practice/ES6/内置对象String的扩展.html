@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>内置对象--String的扩展</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // -----------------模板字符串
+  //   可以换行
+  //   let str = `你好
+  //             world！`;
+  //   console.log(str)
+
+  // 可以使用${变量}使用变量值。
+  //   let name = '芭比小金刚';
+  //   let age = 18;
+  //   let str = `我叫${name}，今年${age}岁了`;
+  //   console.log(str);
+
+
+  //   --------------includes()方法
+  //   let str = 'adasdsovhdsjcl';
+  //   console.log(str.includes('s'))//--------true
+  //   console.log(str.includes('a', 4)) //----------false
+
+  //   ----------------startsWith()和endsWith()方法
+  //   从0开始
+  //   console.log(str.startsWith('ad')) //--------------true
+  //   console.log(str.startsWith('asd', 3)) //---------false
+  //   console.log(str.startsWith('asd', 2)) //---------true
+
+  //   从1开始
+  //   console.log(str.endsWith('jcl')) //--------------true
+  //   console.log(str.endsWith('ds', 6)) //---------true
+  //   console.log(str.endsWith('d', 2)) //---------true
+  //   console.log(str.endsWith('asd', 5)) //---------true
+
+  //   --------------------repeat()
+  //   console.log(str.repeat(2))
+  // --------------------trim():只去除前后的空格
+  //   let str1 = '     hello world     ';
+  //   console.log(str1)
+  //   console.log(str1.trim())
+
+
+
+
+
+  //   ========================Number的扩展
+  console.log(parseInt('123abc')); // 123
+  // ES6中，把parseInt移植到了Number对象上了
+  console.log(Number.parseInt('123abc')); // 123
+</script>
+
+</html>

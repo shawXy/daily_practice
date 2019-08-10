@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>箭头函数</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  //   -------------------普通函数
+  //   let fn = function(x) {
+  //     return x * 2;
+  //   }
+  //  -------------------- 箭头函数
+  //   let fn = (x) => {
+  //     return x * 2;
+  //   }
+  //  ---------------------- 形参只有一个的时候可以省略小括号
+  //   let fn = x => {
+  //     return x * 2;
+  //   }
+  //   console.log(fn(2))
+  // ---------------------------函数体只有一句话时，可以省略大括号,并返回函数体内容
+  //   let fn = x => x * 2;
+  //   console.log(fn(3))
+
+  //   -------------------箭头函数没有arguments
+  //   let fn = () => {
+  //       console.log(arguments);
+  //     }
+  //   fn(1, 2, 3)
+  // ------->报错，arguments is no defined
+
+  //   ------------------------ 箭头函数内部的this指向外部作用域的this，或者箭头函数没有自己的this
+  //   var name = 'lisi';
+  //   let obj = {
+  //     name: '李四',
+  //     behave: () => {
+  //       console.log(this); //------------window
+  //       console.log(this.name); //----------lisi
+  //     }
+  //   }
+  //   obj.behave();
+
+  //   --------------------------箭头函数不能作为构造函数
+  //   let Person = () => {
+  //     behave: () => {
+  //       console.log('ahhah');
+  //     }
+  //   }
+
+  //   let p = new Person();
+  //   -------------->Person is not a constructor
+  // 箭头函数没有自己的this，无法处理成员
+
+  // -------------------可以使用rest参数来替代arguments：...修饰最后一个参数
+  //   let fn = (...value) => {
+  //     console.log(value);
+  //   }
+  //   fn(1, 4, 'lisi');
+  //   ------------->[a,4,'lisi']
+
+
+
+  //   ------------------------参数默认值
+  function fn(x, y = 5) {
+    console.log(x, y);
+  }
+  fn(3);
+  fn(5, 9);
+</script>
+
+</html>
