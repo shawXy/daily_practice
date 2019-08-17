@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>promise</title>
+</head>
+
+<body>
+  <div class="app"></div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  // resolve代表成功之后的回调函数，reject代表失败之后的回调函数
+  var pro = new Promise(function(resolve, reject) {
+    //resolve()
+  })
+
+  //   promise原型继承有两个方法then(),catch()可以对resolve和reject进行处理
+  pro
+    .then(function(result) { //参数function与resolve是对应的，result与data对应
+
+    })
+    .catch(function(wrong) { //参数function与reject对应，wrong与error一致
+
+    })
+
+  //   Promise.resolve(42).then(function(value) {
+  //     console.log(value);
+  //   })
+</script>
+
+</html>

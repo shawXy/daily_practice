@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="app">
+    <p>{{ city }}</p>
+  </div>
+
+
+
+</body>
+<script src="../js/vue.js"></script>
+
+<script>
+  var vm = new Vue({
+      // el: '.app',
+      data: {
+        city: '北京'
+      },
+      // template成员， 可以覆盖渲染给div容器， 并且优先级比普通div容器高
+      template: '<div>上海</div>', //结果显示包含上海的div标签，没有包含北京的p标签
+
+      // render成员方法也可以覆盖渲染容器，且优先级高于template和普通容器
+
+      /*  render: function(create) {
+         return create('span', '南京') //结果显示包含南京的span标签，没有包含北京的p标签以及包含上海的div标签
+       }, */
+      render: create => create('span', '南京'),
+      methods: {
+
+      },
+      computed: {
+
+      }
+    })
+    // 将容器与数据联系起来的除了el成员还有$mount
+  vm.$mount('.app');
+</script>
+
+</html>

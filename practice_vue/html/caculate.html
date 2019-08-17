@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="main">
+    <input type="text" v-model="num1">
+    <span>+</span>
+    <input type="text" v-model="num2">
+    <button @click="equal()">=</button>
+    <span>{{result}}</span>
+  </div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '.main',
+    data: {
+      num1: '',
+      num2: '',
+      result: ''
+    },
+    methods: {
+      equal() {
+        this.result = Number(this.num1) + Number(this.num2);
+      }
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table {
+      width: 700px;
+      margin: auto;
+      border: 1px black solid;
+      border-collapse: collapse;
+    }
+    
+    td {
+      border: 1px black solid;
+    }
+    
+    h2 {
+      height: 40px;
+    }
+    
+    img {
+      width: auto;
+      height: 40px;
+    }
+    
+    .showhead {
+      width: 700px;
+      height: 40px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="showhead">
+      <h2>品牌案例管理</h2>
+      <img src="./images/loading.gif" alt="" v-show="flag">
+    </div>
+    <table>
+      <tr>
+        <td>
+          <!-- 按键修饰符：@keyup.enter或者@keyup.13都代表回车 -->
+          <input type="text" v-model="newbrand" @keyup.enter="addbrand" />
+          <button @click="addbrand()">添加</button>
+        </td>
+        <td><input type="text" placeholder="请输入关键字" v-model="keyword"></td>
+      </tr>
+    </table>
+    <table v-if="brandList.length>0">
+      <tr>
+        <td></td>
+        <td>序号</td>
+        <td>名称</td>
+        <td>创建时间</td>
+        <td>操作</td>
+      </tr>
+      <!--   遍历在methods方法里的search方法时需要加小括号。
+      遍历在computed计算属性中的search时不加小括号 -->
+      <tr v-for="(item,i) in search" :key="item.id">
+        <td><input type="checkbox"></td>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.ctime | dateformat()}}</td>
+        <td><button @click="del(item.id)">删除</button></td>
+      </tr>
+    </table>
+    <table v-else>
+      <tr>
+        <td>序号</td>
+        <td>名称</td>
+        <td>创建时间</td>
+        <td>操作</td>
+      </tr>
+      <tr>
+        <td colspan="4">没有记录</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script src="../js/axios.min.js"></script>
+
+<script>
+  // 配置axios公共地址
+  axios.defaults.baseURL = 'http://127.0.0.1:3006/'
+
+  // 配置axios成为vue的成员
+  Vue.prototype.$http = axios;
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      newbrand: '',
+      brandList: [{
+        id: 10,
+        name: '宝马',
+        ctime: new Date()
+      }, {
+        id: 11,
+        name: '奥迪',
+        ctime: new Date()
+      }, {
+        id: 12,
+        name: '大众',
+        ctime: new Date()
+      }, ],
+      no: 12,
+      keyword: '',
+      flag: false
+    },
+    created() {
+      this.getBrandList();
+
+      // 拦截器:interceptors
+      // 请求拦截器
+      this.$http.interceptors.request.use(config => {
+        this.flag = true;
+        return config;
+      }, err => {
+        return Promise.reject(err)
+      })
+
+      //响应拦截
+      this.$http.interceptors.response.use(response => {
+        this.flag = false;
+        return response;
+      }, err => {
+        return Promise.reject(err)
+      })
+    },
+    methods: {
+      getBrandList() {
+        var result = this.$http.get('/api/getprodlist');
+        result
+          .then(res => {
+            this.brandList = res.data.message;
+          })
+          .catch(err => {
+            return alert('获取品牌出错！')
+          })
+
+      },
+      addbrand() {
+        if (this.newbrand.length !== 0) {
+          // var newobj = {
+          //   id: ++this.no,
+          //   name: this.newbrand,
+          //   ctime: new Date()
+          // };
+          // this.brandList.unshift(newobj);
+          var pro = this.$http.post('/api/addproduct', {
+            name: this.newbrand
+          })
+          pro
+            .then(res => {
+              if (res.data.status == 0)
+                this.getBrandList();
+            })
+            .catch(err => {
+              return alert(res.data.message)
+            })
+          this.newbrand = '';
+        }
+      },
+      del(id) {
+        if (confirm('确定要删除么？')) {
+          var result = this.$http.get('/api/delproduct/' + id)
+          result
+            .then(res => {
+              if (res.data.status == 0)
+                this.getBrandList();
+            })
+            .catch(err => {
+              return alert(res.data.message)
+            })
+            // this.brandList.splice(id, 1);
+        }
+      },
+      // search() {
+      //   return this.brandList.filter(item => { //=====>返回的是包含关键字的对象
+      //     return item.name.includes(this.keyword) //====>返回的是个布尔值
+      //   })
+      // }
+    },
+    computed: {
+      search() {
+        return this.brandList.filter(item => item.name.includes(this.keyword))
+      }
+    },
+    filters: {
+      dateformat(origin) {
+        var time = new Date(origin);
+        var year = time.getFullYear();
+        var month = (time.getMonth() + 1 + '').padStart(2, 0);
+        var day = (time.getDate() + '').padStart(2, 0);
+        var hour = (time.getHours() + '').padStart(2, 0);
+        var minute = (time.getMinutes() + '').padStart(2, 0);
+        var second = (time.getSeconds() + '').padStart(2, 0);
+        // return year + '-' + month + '-' + day + '' + hour + ':' + minute + ':' + second;
+        return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+      }
+    }
+  })
+</script>
+
+</html>

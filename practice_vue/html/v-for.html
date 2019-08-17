@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="app">
+    <!-- v-for遍历数组 -->
+    <!-- 只有数组值 -->
+    <ul>
+      <li v-for="item in fruit">{{item}}</li>
+    </ul>
+    <!-- 数组值和下标 -->
+    <ul>
+      <li v-for="(item,i) in fruit">{{i}}-----{{item}}</li>
+    </ul>
+
+
+    <hr>
+
+    <!-- v-for遍历对象 -->
+    <!-- 只有对象成员 -->
+    <ul>
+      <li v-for="item in animal[0]">{{item}}</li>
+    </ul>
+    <!-- 包含成员的名称和值 -->
+    <ul>
+      <li v-for="(value,key) in animal[0]">{{key}}------{{value}}</li>
+    </ul>
+    <!-- 包含成员名称和值和下标 -->
+    <ul>
+      <li v-for="(value,key,i) in animal[0]">{{i}}-------{{key}}------{{value}}</li>
+    </ul>
+
+
+    <hr>
+    <!-- 遍历数组对象集 -->
+    <!-- <ul v-for="item in animal">
+      <li v-for="(value,key) in item">{{key}}------{{value}}</li>
+    </ul> -->
+
+    <!-- v-for需要与:key一起使用才能跟踪节点 -->
+    <ul v-for="item in animal" :key="item.id">
+      <li>{{item.category}}</li>
+    </ul>
+
+  </div>
+
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '.app',
+    data: {
+      fruit: ['apple', 'pear', 'lemon', 'orange'],
+      animal: [{
+        id: 1,
+        category: 'cat',
+        leg: 4,
+        fly: false
+      }, {
+        id: 2,
+        category: 'dog',
+        leg: 4,
+        fly: false
+      }, {
+        id: 3,
+        category: 'bird',
+        leg: 2,
+        fly: true
+      }]
+    },
+    methods: {
+
+    },
+    computed: {
+
+    }
+  })
+</script>
+
+</html>

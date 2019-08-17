@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="main">
+    <!-- 绑定文本域 -->
+    <textarea v-model="input1" cols="80" rows="5"></textarea>
+    <div>{{ input1 }}</div>
+    <hr>
+    <!-- 绑定单选框 -->
+    <input type="radio" name="gender" v-model="sex" value="男">男
+    <input type="radio" name="gender" v-model="sex" value="女">女
+    <p>{{ sex }}</p>
+    <hr>
+    <!-- 绑定复选框 -->
+    <!-- 单个 -->
+    <input type="checkbox" v-model="agree" value="同意">我接受该协议
+    <p>{{ agree }}</p>
+    <!-- 多个 -->
+    <input type="checkbox" v-model="hobby" value="唱歌">唱歌
+    <input type="checkbox" v-model="hobby" value="跳舞">跳舞
+    <input type="checkbox" v-model="hobby" value="打篮球">打篮球
+    <p>{{ hobby }}</p>
+    <hr>
+    <!-- 绑定下拉框 -->
+    <select name="city" v-model='ops'>
+        <option value="上海" selected>上海</option>
+        <option value="北京">北京</option>
+        <option value="深圳">深圳</option>
+        <option value="广州">广州</option>
+    </select>
+    <p>{{ ops }}</p>
+
+    <hr>
+    <!-- 简易模式 -->
+    <!-- $event是Vue中获得原始事件对象的固定语法 -->
+    <input type="text" @input="msg=$event.target.value" :value="msg">
+    <p>{{msg}}</p>
+  </div>
+
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '.main',
+    data: {
+      input1: '',
+      sex: '',
+      agree: '',
+      hobby: [],
+      ops: '上海',
+      msg: 'hello world'
+    },
+    methods: {
+
+    }
+  })
+</script>
+
+</html>

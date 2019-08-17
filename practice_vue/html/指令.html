@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .fl {
+      float: left;
+    }
+    
+    .ml {
+      margin-left: 100px;
+    }
+    
+    button {
+      width: 80px;
+      height: 30px;
+      ;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 插值表达式，v-text,v-html -->
+  <div class="one">
+    <p>{{name}}{{htmltest}}</p>
+    <p v-text="age"></p>
+    <p v-html="gender"></p>
+    <p v-html="htmltest"></p>
+  </div>
+
+  <hr>
+  <!-- v-bind绑定属性,class,style -->
+  <div class="two">
+    <div :style="{height:'100px'}">
+      <img :src="lujing">
+    </div>
+    <div v-bind:class="{fl:true,ml:false}" v-bind:style="{'background-color':'red',width:'100px',height:'100px'}"></div>
+    <div :class="['fl','ml']" :style="[{'background-color':'green'},{width:'100px',height:'100px'}]"></div>
+
+  </div>
+  <div style="clear: both"></div>
+  <hr>
+
+
+  <!-- v-on绑定事件 -->
+  <div class="three">
+    <button v-on:click="sing()">点我！</button>
+    <button @click='dance()'>点我！！</button>
+    <button @click='basketball'>点我！！！</button>
+  </div>
+
+  <hr>
+  <!-- v-model双向绑定 -->
+  <div class="four">
+    <label>姓名</label><input type="text" v-model="name">
+    <label>年龄</label><input type="text" v-model="age">
+    <input type="button" @click='introduce()' value="开始">
+    <p>{{result}}</p>
+    <!-- <p>{{name}}</p> -->
+  </div>
+
+  <hr>
+  <!-- v-if和v-show显示隐藏 -->
+  <div class="five">
+    <button @click="flag=!flag">显示/隐藏</button>
+    <div v-if="flag">测试一下v-if显示和隐藏</div>
+    <div v-show="flag">测试一下v-show显示和隐藏</div>
+  </div>
+
+
+</body>
+<script src="../js/vue.js"></script>
+
+<script>
+  //插值表达式
+  var vm = new Vue({
+    el: '.one',
+    data: {
+      name: 'shaw',
+      age: 24,
+      gender: 'female',
+      htmltest: '<i>这是一段斜体文字</i>'
+
+    }
+
+  })
+
+  // v-bind绑定属性
+  var vm1 = new Vue({
+    el: '.two',
+    data: {
+      lujing: '../img/05.jpg'
+    }
+  })
+
+  // v-on绑定事件,传参，获取数据
+
+  var vm2 = new Vue({
+    el: '.three',
+    data: {
+      name: '蔡徐坤',
+      gender: '男'
+    },
+    methods: {
+      sing() {
+        console.log(this.name + 'say:I like singing...')
+      },
+      dance(id) {
+        console.log(id + 'I like dancing...')
+      },
+      basketball(id) {
+        console.log(id + 'I like playing basketball...')
+      }
+    }
+  })
+
+
+  // v-model双向绑定
+  var vm3 = new Vue({
+    el: '.four',
+    data: {
+      name: '',
+      age: '',
+      result: ''
+    },
+    methods: {
+      introduce() {
+        this.result = '我叫' + this.name + ',今年' + this.age + '岁'
+      }
+    }
+  });
+
+  // v-if和v-show显示隐藏
+  var vm4 = new Vue({
+    el: '.five',
+    data: {
+      flag: true
+    }
+  })
+
+  // <tag v-if="true/false"></tag>
+  // <tag v-else-if="true/false"></tag>
+  // <tag v-else-if="true/false"></tag>
+  // <tag v-else></tag>
+</script>
+
+</html>
