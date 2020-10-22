@@ -1,0 +1,189 @@
+@import "font/iconfont.css";
+html,body{
+    overflow-x: hidden;
+}
+/*卡片布局--start*/
+.layui-card{
+    background-color: #ffffff00 !important;
+    /*box-shadow: none;*/
+}
+.admin-main{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.workbench .layui-card-header{
+    border-bottom: none;
+    height: 45px;
+    line-height: 45px;
+    /*background: #fafafc;*/
+}
+
+.workbench .layui-card{
+    margin-bottom: 20px;
+    box-shadow: 0 1px 11px 1px #eeeeee;
+}
+.workbench .layui-card{
+    border: 1px solid #eeeeee;
+}
+.workbench .layui-card:hover{
+    box-shadow: 0 1px 11px 1px #eeeeee;
+    transition: all 0.3s;
+}
+.card-header-more{
+    float: right;margin: 0px;color: #6a6a6a;font-size: 14px;
+}
+
+
+
+
+.header-title-sm{
+    position: relative;
+    padding: 0 15px;
+    color: #000;
+    font-size: 15px;
+}
+.header-title-sm:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0px;
+    bottom: 0;
+    width:6px;
+    background: #0057e2;
+}
+.sm-card .layui-card-header{
+    border-bottom: none;
+}
+.sm-card .layui-card-header:after{
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    height: 1px;
+    border-bottom: 1px dashed #d1d1d1;
+
+}
+/*卡片布局--end*/
+
+
+/*日历组件*/
+.layui-laydate-header i.laydate-next-y ,.layui-laydate-header i.laydate-prev-y{display: none;}
+.layui-laydate-main > .layui-laydate-header i.laydate-prev-m
+,.layui-laydate-main > .layui-laydate-header i.laydate-next-m
+,.layui-laydate-header i.laydate-prev-y
+,.layui-laydate-header i.laydate-next-y{
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    padding: 0 2px 0 1px;
+    font-size: 12px;
+    text-align: -webkit-left;
+    line-height: 18px;
+    color: #fff;
+    border-radius: 50%;
+    background: #0064ff;
+    box-sizing: border-box;
+}
+.layui-laydate-main > .layui-laydate-header i.laydate-prev-m{left: 125px;}
+.layui-laydate-main > .layui-laydate-header i.laydate-next-m{
+    right: auto;
+    left: 155px;
+    padding: 0 2px 0 3px;
+}
+.laydate-set-ym{text-align: left!important;}
+.layui-laydate-header{padding: 5px 20px 5px!important;}
+.layui-laydate-header i.laydate-prev-y{left: 145px!important;}
+.layui-laydate-header i.laydate-next-y{right: 75px!important;padding-left: 2px;}
+/*.layui-laydate .layui-this{border-radius: 50%;}*/
+/*.layui-laydate-content td:hover, .layui-laydate-list li:hover{border-radius: 50%;}*/
+.layui-laydate-content td, .layui-laydate-content th{overflow: hidden;height: auto!important;}
+#layui-laydate1 .layui-laydate-header{background-color: transparent!important;}
+.laydate-theme-molv .layui-laydate-header i{color: #fff!important;}
+.laydate-theme-molv .layui-laydate-header span{color: #2b2b2b!important}
+.laydate-theme-molv .layui-laydate-content{border:none!important;margin-top:-10px}
+#layui-laydate1 li.layui-this{border-radius: 0}
+#layui-laydate1 td.layui-this{background-color: #e2e2e2!important;}
+#layui-laydate1{width: 100%;margin: 0 auto;}
+.layui-laydate, .layui-laydate-hint{box-shadow: none!important;}
+.laydate-day-mark{max-height: 38px}
+.laydate-theme-molv .layui-laydate-main {margin:0 auto; width: 100%; background-color: #ffffff00!important;}
+.layui-laydate-content table{width: 100%;background-color: #ffffff00;}
+.layui-laydate-content table thead{background: #f6f6f6;}
+/*日历组件结束*/
+
+
+/*日程安排--start*/
+.toDoList {
+    border-top: 1px solid #93c8ff;
+}
+.list {
+    padding: 10px 0;
+}
+.list .list-item {
+    margin-bottom: 10px;
+    overflow: hidden;
+    line-height: 20px;
+}
+.list .time {
+    position: relative;
+    width: 45px;
+    text-align: center;
+    border-radius: 50px;
+}
+.list .time:after {
+    position: absolute;
+    content: '';
+    width: 2px;
+    top: 2px;
+    bottom: 2px;
+    right: 0;
+    background: #539dff;
+}
+.list .item {
+    padding: 0px 6px;
+    display: inline-block;
+    float: left;
+}
+.list .item-content {
+    width: 100%;
+    margin-right: -115px;
+    padding-right: 115px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+.list .item-edit {
+    width: 55px;
+    padding: 0;
+}
+.el-button {
+    padding: 0 4px;
+    background: transparent;
+    border: none;
+    color: #409EFF;
+    cursor: pointer;
+}
+.btn-del {
+    color: #f23737;
+}
+
+
+/*日程安排--end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

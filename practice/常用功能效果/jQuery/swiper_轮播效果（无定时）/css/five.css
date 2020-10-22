@@ -1,0 +1,226 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/five/background.png);
+    /* overflow: scroll 50% 0 transparent; */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* 导航栏 */
+.nav {
+    width: 100%;
+    height: 100px;
+    background-image: url(../img/indeximg/nav.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.left {
+    width: auto;
+    height: 100px;
+    line-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left img {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+.left>span {
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.right {
+    width: auto;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.right li {
+    float: left;
+    margin-right: 20px;
+}
+
+.img1 img {
+    margin-right: 1px;
+}
+
+.right img {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.right li a {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.right li span {
+    color: #fff;
+}
+
+/* content内容区域 */
+.content {
+    width: 1556px;
+    height: 664px;
+    background-image: url(../img/five/border1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+/* 点击切换 */
+.box {
+    width: 1000px;
+    height: 550px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box_wheel {
+    width: 1000px;
+    height: 550px;
+    overflow: hidden;
+}
+
+.btn {
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn img {
+    width: 30px;
+    height: 30px;
+}
+
+.btn_left {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.btn_right {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.box_ul {
+    height: 550px;
+}
+
+.box_ul li {
+    width: 1000px;
+    height: 550px;
+    float: left;
+    /* line-height: 550px; */
+    /* text-align: center; */
+}
+
+/* center系统 */
+.xitong {
+    width: 400px;
+    height: 100px;
+    background-image: url(../img/five/border2.png);
+    background-size: 100%;
+    border-radius: 20px 20px;
+    display: inline-block;
+    /* background-color: rgba(255, 255, 255, 0.1) !important; */
+    line-height: 100px;
+    text-align: center;
+}
+
+.center_xitong>a {
+    margin-bottom: 35px;
+}
+
+.center_xitong {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.xitong img {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.xitong span {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.title {
+    font-size: 50px;
+    text-align: center;
+    color: #059fd8;
+    margin-top: 35px;
+}
+
+/* bottom五大业务域 */
+.bottom {
+    width: 850px;
+    height: 190px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.yewu {
+    display: inline-block;
+}
+
+.yewu img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.yewu p {
+    font-size: 20px;
+    color: #05f1fa;
+}
+
+#first , #last {
+    padding-top: 30px;
+}
+
+
+.tabItemCurrent {
+    color: #ffff !important;
+    background-color: #1d6de6 !important;
+}

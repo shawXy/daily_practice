@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/download.css">
+    <link rel="icon" type="image/png" sizes="144x144" href="./img/workimg/sun.png"/>
+<!-- <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="logo-144.png"/> -->
+</head>
+
+<body>
+    <!-- 头部导航栏 -->
+    <div class="nav">
+        <div class="left fl">
+            <img src="./img/indeximg/logo.png" alt="">
+            <span>陕西省应急管理综合应用平台 —— 应用下载</span>
+        </div>
+    </div>
+    <!-- contentTab栏 -->
+    <div id="TabMain">
+        <div class="left_tab">
+            <div class="leixin">
+                <img src="./img/download/logo.png" alt=""><span>应用类型</span>
+            </div>
+            <div class="tabItemContainer">
+                <ul style="height: 100%;">
+                    <li><a class="navlist tabItemCurrent">办公</a></li>
+                    <li><a class="navlist">交通</a></li>
+                    <li><a class="navlist">教育</a></li>
+                    <li><a class="navlist">导航</a></li>
+                    <li><a class="navlist">生活</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_tab">
+            <div class="tabBodyContainer">
+                <div class="tabBodyItem list ">
+                    <div class="s1">
+                        <div class="top">
+                            <img src="./img/download/app2.png" alt="">
+                            <div class="top_right">
+                                <p>钉钉</p>
+                                <p>阿里巴巴旗下移动办公平台</p>
+                                <p>11.6万</p>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <p>钉钉，是阿里巴巴集团专为企业打造的一个工作商务沟通、协调、智能移动办公平台，帮助数千万企业降低沟通、协调、管理成本，提升办公效率，实现数字化新工作方式。</p>
+                        </div>
+                        <div class="bottom">
+                            <div class="banben">
+                                <p>版本号：11.62035.0</p>
+                                <p>更新时间：2020-10-15</p>
+                                <p>大小：64.53</p>
+                            </div>
+                            <div class="down">
+                                <div class=".mac">
+                                    <span>大小：180.8MB</span>
+                                    <div class="bgc"> <a href="#">Mac下载</a> </div>
+                                </div>
+                                <div class="windows">
+                                    <span>大小：180.8MB</span>
+                                    <div class="bgc1"><a href="#">Windows下载</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabBodyItem list" style="display: none;">
+                    <div class="s1">
+                        <div class="top">
+                            <img src="./img/download/app2.png" alt="">
+                            <div class="top_right">
+                                <p>当当当</p>
+                                <p>当当当当当当当</p>
+                                <p>11.6万</p>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <p>钉钉，是阿里巴巴集团专为企业打造的一个工作商务沟通、协调、智能移动办公平台，帮助数千万企业降低沟通、协调、管理成本，提升办公效率，实现数字化新工作方式。</p>
+                        </div>
+                        <div class="bottom">
+                            <div class="banben">
+                                <p>版本号：11.62035.0</p>
+                                <p>更新时间：2020-10-15</p>
+                                <p>大小：64.53</p>
+                            </div>
+                            <div class="down">
+                                <div class=".mac">
+                                    <span>大小：180.8MB</span>
+                                    <div class="bgc">Mac下载</div>
+                                </div>
+                                <div class="windows">
+                                    <span>大小：180.8MB</span>
+                                    <div class="bgc1">Windows下载</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        // var SidebarTabHandler = {
+        //     Init: function () {
+        //         $(".tabItemContainer>ul>li").click(function () {
+        //             $(".tabItemContainer>ul>li>a").removeClass("tabItemCurrent");
+        //             $(".tabBodyItem").removeClass("tabBodyCurrent");
+        //             $(this).find("a").addClass("tabItemCurrent");
+        //             $($(".tabBodyItem")[$(this).index()]).addClass("tabBodyCurrent");
+        //         });
+        //     }()
+        // }
+        $(document).ready(function () {
+            var urla = window.location.search
+            var tabnavlist = document.getElementsByClassName('navlist');
+            var contentlist = document.getElementsByClassName('list')
+
+                for (var i = 0; i < tabnavlist.length; i++) {
+                    tabnavlist[i].index = i
+                    tabnavlist[i].onclick = function () {
+                        for (var j = 0; j < tabnavlist.length; j++) {
+                            tabnavlist[j].classList.remove('tabItemCurrent')
+                        }
+                        for (var i = 0; i < contentlist.length; i++) {
+                            contentlist[i].style.display = 'none'
+                        }
+                        tabnavlist[this.index].classList.add('tabItemCurrent')
+                        contentlist[this.index].style.display = 'block'
+                    }
+                }
+        })
+    </script>
+</body>
+
+</html>

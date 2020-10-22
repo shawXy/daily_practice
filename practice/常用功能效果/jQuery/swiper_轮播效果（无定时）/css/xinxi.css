@@ -1,0 +1,62 @@
+body {
+    background-color: #fafafa;
+    width: 700px;
+    height: 100%;
+}
+.left {
+    float: left;
+    width: 150px;
+    height: 400px;
+    background-color: #ffffff;
+}
+.avatar {
+    width: 100%;
+    text-align: center;
+
+}
+.avatar img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    padding-left: 45px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.avatar span {
+    font-size: 10px;
+    font-weight: 400;
+}
+.house {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.house img {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: center;
+}
+.house span {
+    font-size: 10px;
+}
+.top {
+    width: 545px;
+    height: 50px;
+    float: right;
+    background-color: #fff;
+    line-height: 50px;
+}
+.top span {
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 20px;
+}
+.bottom {
+    width: 545px;
+    height: 345px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+    background-color: #fff;
+}

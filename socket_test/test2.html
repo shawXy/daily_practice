@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>测试websocket------用户2</div>
+  <div id="chat"></div>
+
+  <input type="text" name="chattxt" id="chattxt">
+  <button onclick="sendMessage()">发送</button>
+  <script>
+    let ws = new WebSocket('ws://localhost:8888/lisi')
+    ws.onopen = function(evt) {
+      console.log('客户2连接成功。。')
+      ws.send(JSON.stringify({
+        type: 'login',
+        user: 'lisi'
+      }))
+    }
+    var chat = document.getElementById('chat')
+    ws.onmessage = function(evt) {
+      console.log('收到服务器的响应：' + evt.data)
+      chat.innerHTML += `<p>${evt.data}</p>`
+    }
+    ws.onclose = function(evt) {
+      console.log('客户2断开连接。。')
+      ws.send('客户2下线了')
+    }
+
+    function sendMessage() {
+      var txt = document.getElementById('chattxt')
+      ws.send(JSON.stringify({
+        type: 'txt',
+        to: 'zhangsan',
+        message: txt.value
+      }))
+      chat.innerHTML += `<p>${txt.value}</p>`
+    }
+  </script>
+</body>
+
+</html>

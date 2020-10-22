@@ -42,29 +42,29 @@
 
 
   // call方法改变指向
-  //   var obj = {};
-  //   Person.call(obj, '张三', 16, '男');
-  //   console.log(obj)
+  // var obj = {};
+  // Person.call(obj, '张三', 16, '男');
+  // console.log(obj)
   //   借用继承
-  /*   function Student(name, age, gender, stuID) {
-      this.stuID = stuID;
-      // 借用父类的属性
-      Person.call(this, name, age, gender)
-    }
+  function Student(name, age, gender, stuID) {
+    this.stuID = stuID;
+    // 借用父类的属性
+    Person.call(this, name, age, gender)
+  }
 
-    var stu1 = new Student('张三', 10, '男', 1001);
-    var stu2 = new Student('李四', 12, '女', 1002); */
+  var stu1 = new Student('张三', 10, '男', 1001);
+  var stu2 = new Student('李四', 12, '女', 1002);
 
 
   //组合继承
-  function Student(name, age, gender, stuID) {
-    this.stuID = stuID;
-    Person.call(this, name, age, gender) //借用
-  }
-  Student.prototype = new Person(); //原型
-  Student.prototype.constructor = Student;
-  var stu1 = new Student('张三', 10, '男', 1001);
-  var stu2 = new Student('李四', 12, '女', 1002);
+  // function Student(name, age, gender, stuID) {
+  //   this.stuID = stuID;
+  //   Person.call(this, name, age, gender) //借用
+  // }
+  // Student.prototype = new Person(); //原型
+  // Student.prototype.constructor = Student;
+  // var stu1 = new Student('张三', 10, '男', 1001);
+  // var stu2 = new Student('李四', 12, '女', 1002);
 </script>
 
 </html>

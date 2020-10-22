@@ -1,0 +1,747 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/workimg/background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+/* 导航栏 */
+.nav {
+    width: 100%;
+    height: 60px;
+    /* background-color: #0b1f64; */
+    background-color: #0f266c;
+}
+
+.left {
+    width: auto;
+    height: 60px;
+    /* text-align: center; */
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left img {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    /* vertical-align: middle; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+.left>span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.right {
+    width: auto;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.right li {
+    float: left;
+    margin-right: 20px;
+}
+
+.right img {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.right li a {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+.right li span {
+    color: #fff;
+}
+
+
+
+/* 导航结束    End */
+/* side侧边栏 */
+.side {
+    width: 45px;
+    height: 340px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* opacity: 0.1; */
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    transform: translateY(-50%);
+    text-align: center;
+    /* margin: 0 auto; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side img {
+    width: 45px;
+    height: 45px;
+    padding-bottom: 15px;
+}
+
+.img1 img {
+    width: 30px;
+    height: 30px;
+    padding-top: 10px;
+}
+
+/* middle搜索 */
+.search {
+    width: 400px;
+    height: 60px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+
+.search input {
+    float: left;
+    width: 300px;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.search button {
+    width: 60px;
+    height: 40px;
+    display: inline-block;
+    background-color: blue;
+    border-style: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search button img {
+    width: 20px;
+    height: 20px;
+}
+
+.search input::-webkit-input-placeholder {
+    color: #fff;
+    padding-left: 10px;
+}
+
+/* middle应用 */
+.middle {
+    width: 450px;
+    /* height: 300px; */
+    position: absolute;
+    top: 40%;
+    left: 27%;
+}
+
+.middleimg img {
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.middleimg img:hover {
+    transform: scale(1.4);
+}
+
+.middleimg {
+    width: 32%;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+/* 天气 */
+.side2 {
+    width: 300px;
+    height: 100%;
+    float: right;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.weather {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.w_img img {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.w_middle {
+    width: 60%;
+}
+
+.city {
+    font-size: 16px;
+    /* width: 50%; */
+    margin-bottom: 5px;
+}
+
+.wea {
+    display: inline-block;
+}
+
+.winddirection {
+    display: inline-block;
+}
+
+.windpower {
+    display: inline-block;
+}
+
+.citydata {
+    color: #fff;
+}
+
+.weadata {
+    color: #fff;
+    font-size: 14px;
+}
+
+.winddirectiondata {
+    color: #fff;
+    font-size: 14px;
+    margin-left: -30px;
+}
+
+.windpowerdata {
+    color: #fff;
+    font-size: 14px;
+
+}
+
+.temperaturedata {
+    color: #fff;
+    margin-right: 20px;
+}
+
+.wea {
+    font-size: 16px;
+    width: 50%;
+}
+
+.winddirection span {
+    font-size: 14px;
+}
+
+.windpower {
+    font-size: 14px;
+}
+
+.temperature {
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 消息待办 */
+.news {
+    width: 100%;
+    height: 25%;
+}
+
+.box {
+    display: inline-block;
+    padding: 0 !important;
+    width: 5px !important;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 5px;
+}
+
+.tatle {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    line-height: 30px;
+}
+
+.tatle a {
+    float: right;
+    color: #fff;
+    padding-right: 20px;
+}
+
+.tatle p {
+    display: inline-block;
+    color: #fff;
+    font-style: 15px;
+    padding-left: 20px;
+}
+
+.upcoming {
+    width: 100%;
+    /* height: 130px; */
+}
+
+.upcoming ul {
+    padding-left: 30px;
+}
+
+.upcoming li {
+
+    color: #fff;
+    height: 20px;
+    /* line-height: 20px; */
+    padding-top: 15px;
+}
+
+.father,
+.father1,
+.father2 {
+    display: flex;
+    align-items: center;
+}
+
+.upcoming li p {
+    display: inline-block;
+    font-size: 10px;
+    width: 160px;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.upcoming li span {
+    float: right;
+    font-size: 10px;
+    padding-right: 10px;
+}
+
+/* 我的日程 */
+.date {
+    width: 100%;
+    height: 60%;
+}
+
+.tatle1 {
+    width: 100%;
+    height: 29px;
+    background-color: rgba(255, 255, 255, 0.3);
+    line-height: 30px;
+    border-bottom: 1px dashed #fff;
+}
+
+.tatle1 a {
+    float: right;
+    color: #fff;
+    padding-right: 20px;
+}
+
+.tatle1 p {
+    display: inline-block;
+    color: #fff;
+    font-style: 15px;
+    padding-left: 20px;
+}
+
+/* 日程待办 */
+.banshi {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 5px;
+}
+
+.dian {
+    padding: 0 !important;
+    width: 5px !important;
+    height: 5px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    background-color: #fff;
+}
+
+.banshi1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.banshi a {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+#time1 {
+    font-size: 10px;
+    color: #fff;
+    margin: 0 !important;
+}
+
+#time2 {
+    font-size: 10px;
+    color: #000;
+    margin: 0 !important;
+}
+
+
+/* 日历 */
+.layui-laydate .layui-this {
+    background-color: #ffa200 !important;
+    border-radius: 20px;
+}
+
+.layui-laydate-header {
+    border: 0 !important;
+    line-height: 30px !important;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.layui-laydate {
+    border: 0 !important;
+    box-shadow: none !important;
+    background-color: #ffffff00 !important;
+    color: #fff !important;
+}
+
+.layui-laydate-content th,
+.layui-laydate-content td,
+.layui-laydate-header i {
+    color: #fff !important;
+}
+
+.layui-inline {
+    /* position: absolute; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    background-color: #ffffff00 !important;
+    /* background-color: #3897cb; */
+}
+
+.layui-laydate,
+.layui-laydate-main,
+.layui-laydate-content,
+.layui-laydate-main,
+.layui-laydate-content table {
+    width: 100% !important;
+}
+
+.layui-laydate-footer,
+.layui-laydate-header i.laydate-prev-y,
+.layui-laydate-header i.laydate-next-y,
+.laydate-day-next {
+    display: none;
+}
+
+.layui-laydate-content {
+    padding: 0 !important;
+}
+
+.upcoming2 {
+    width: 100%;
+    height: 130px;
+}
+
+.upcoming2 ul {
+    padding-left: 30px;
+}
+
+.upcoming2 li {
+    list-style: disc;
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+    padding-top: 10px;
+}
+
+.upcoming2 li p {
+    display: inline-block;
+    font-size: 10px;
+}
+
+.upcoming2 li span {
+    float: right;
+    font-size: 10px;
+    padding-right: 20px;
+}
+
+.layui-inline {
+    width: 100% !important;
+}
+
+
+
+/* 媒体查询适配 */
+@media screen and (min-device-width:1920px) {
+    .nav {
+        height: 100px;
+    }
+
+    .left {
+        height: 100px;
+        line-height: 100px;
+    }
+
+    .left img {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        margin-left: 50px;
+        margin-right: 10px;
+    }
+
+    .left>span {
+        font-size: 30px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .right {
+        height: 100px;
+        line-height: 100px;
+    }
+
+    .right img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .right li a {
+        margin-right: 20px;
+        font-size: 20px;
+    }
+
+    /* 侧边栏 */
+    .side {
+        width: 100px;
+        height: 500px;
+    }
+
+    .side img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .img1 img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* 搜索 */
+    .search {
+        width: 800px;
+        height: 70px;
+        left: 23%;
+    }
+
+    .search input {
+        float: left;
+        width: 600px;
+        height: 70px;
+    }
+
+    .search button {
+        width: 90px;
+        height: 70px;
+        margin-left: -3px;
+    }
+
+    .search button img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .search input::-webkit-input-placeholder {
+        color: #fff;
+        padding-left: 30px;
+        font-size: 20px;
+    }
+
+    /* 应用 */
+    .middle {
+        width: 910px;
+        /* height: 400px; */
+        top: 38%;
+        left: 18%;
+    }
+
+    .middleimg {
+        width: 300px;
+        font-size: 30px;
+    }
+
+    .middleimg img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* side2 */
+    .side2 {
+        width: 500px;
+    }
+
+    /* 消息待办 */
+    .news {
+        height: 20%;
+    }
+
+    .tatle {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .upcoming {
+        height: 140px;
+        display: flex;
+        align-items: center;
+    }
+
+    .upcoming li {
+        font-size: 16px;
+        color: #fff;
+        height: 30px;
+        line-height: 30px;
+        padding-top: 10px;
+    }
+
+    .upcoming li p {
+        display: inline-block;
+        font-size: 16px;
+        width: 300px;
+        margin-right: 20px;
+    }
+
+    .upcoming li span {
+        float: right;
+        font-size: 16px;
+        padding-right: 10px;
+    }
+
+    .aaa {
+        display: inline-block;
+        white-space: nowrap;
+        width: 70%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* font-size: 12px; */
+    }
+
+    .bbb {
+        font-size: 20px;
+        padding-right: 20px;
+    }
+
+
+
+    /* 我的日程 */
+    .date {
+        height: 60%;
+    }
+
+    .tatle1 {
+        height: 49px;
+        line-height: 50px;
+    }
+
+    /* 天气 */
+    .w_img img {
+        width: 80px;
+        height: 70px;
+        margin-right: 30px;
+    }
+
+    .city {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .weadata {
+        font-size: 16px;
+    }
+
+    .windpowerdata {
+        font-size: 16px;
+    }
+
+    .winddirection span {
+        font-size: 16px;
+    }
+
+    .temperaturedata {
+        font-size: 40px;
+        margin-right: 40px;
+    }
+    /* 日程待辦 */
+    .banshi {
+        height: 60px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .dian {
+        width: 10px !important;
+        height: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .banshi a {
+        height: 60px;
+    }
+    #time1 {
+        font-size: 16px;
+    }
+    
+    #time2 {
+        font-size: 16px;
+    }
+}
